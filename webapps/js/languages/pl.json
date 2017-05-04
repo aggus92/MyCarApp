@@ -3,5 +3,9 @@
 	"COMMON_LANGUAGE_ENGLISH"                         : "Angielski",
 	"COMMON_LANGUAGE_POLISH"                          : "Polski",
 	"COMMON_MY_CAR_APP"								  : "My Car App",
-	"COMMON_COPYRIGHT"                                : "Wszelkie prawa zastrzeżone"
+	"COMMON_COPYRIGHT"                                : "Wszelkie prawa zastrzeżone",
+	"COMMON_REPORTS"                                  : "Raporty",
+	"COMMON_STATISTICS"                               : "Statystyki",
+	"COMMON_REMINDERS"                                : "Przypomnienia",
+	"COMMON_START"                                    : "Home"
 }

@@ -45,14 +45,30 @@ mycarapp.config(function($stateProvider, $urlRouterProvider, $controllerProvider
         };
     }
 
-    $urlRouterProvider.otherwise('start');
+    $urlRouterProvider.otherwise('home');
 
     $stateProvider
-        .state('start', {
-            url: '/start',
-            templateUrl: 'views/startTemplate.html',
-            ncyBreadcrumb: {
-                label: 'BREADCRUMB_START'
-            }
+        .state('home', {
+            url: '/home',
+            templateUrl: 'views/startTemplate.html'
+        })
+        .state('reports', {
+            //params: {'reports': null},
+            url: '/reports',
+            templateUrl: 'views/reportsTemplate.html',
+            controller: 'ReportsCtrl',
+            resolve: loader(['ReportsCtrl'])
+        })
+        .state('statistics', {
+            url: '/statistics',
+            templateUrl: 'views/statisticsTemplate.html',
+            controller: 'StatisticsCtrl',
+            resolve: loader(['StatisticsCtrl'])
+        })
+        .state('reminders', {
+            url: '/reminders',
+            templateUrl: 'views/remindersTemplate.html',
+            controller: 'RemindersCtrl',
+            resolve: loader(['RemindersCtrl'])
         })
 });

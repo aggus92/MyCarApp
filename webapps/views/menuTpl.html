@@ -1,24 +1,30 @@
-<ul class="nav navbar-nav navbar-right">
-    <li>
-        <a ui-sref="start" ui-sref-active="main-menu__item-link--active">
-            <span class="main-menu__item-link__icon fa fa-list"></span>
-            <span uib-tooltip="" tooltip-placement="top" tooltip-popup-delay='500' class="main-menu__item-link__title">START</span>
-        </a>
-    </li>
-    <li>
-        <a>
-            <i class="fa fa-spinner fa-pulse" id="notify-icon"></i>
-            <i class="fa fa-wifi" style="display: none;" uib-tooltip="" tooltip-placement="left" id="ajax-icon"></i>
-            grupa
-        </a>
-    </li>
+<ul class="nav nav-justified">
+    <li><a ui-sref="home">{{'COMMON_START' | translate}}</a></li>
+    <li><a ui-sref="reports">{{'COMMON_REPORTS' | translate}}</a></li>
+    <li><a ui-sref="statistics">{{'COMMON_STATISTICS' | translate}}</a></li>
+    <li><a ui-sref="reminders">{{'COMMON_REMINDERS' | translate}}</a></li>
     <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            profil
+            {{'COMMON_LANGUAGE' | translate}}
             <span class="caret"></span>
         </a>
         <ul class="dropdown-menu">
-
+            <li>
+                <a href="#" ng-click="switchLanguage('pl')">
+                    <i class="flag-icon flag-icon-pl"></i>
+                    {{'COMMON_LANGUAGE_POLISH' | translate}}
+                </a>
+            </li>
+            <li>
+                <a href="#" ng-click="switchLanguage('en')">
+                    <i class="flag-icon flag-icon-gb"></i>
+                    {{'COMMON_LANGUAGE_ENGLISH' | translate}}
+                </a>
+            </li>
         </ul>
     </li>
 </ul>
+
+<ul class="nav navbar-nav navbar-right">
+</ul>
+

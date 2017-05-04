@@ -5,16 +5,15 @@
 
 var mycarapp = angular.module('mycarapp', [
     'ngRoute',
-    'ncy-angular-breadcrumb'
+    'ncy-angular-breadcrumb',
+    'pascalprecht.translate'
 ]);
 
-
-//add 'pascalprecht.translate', to module
-// mycarapp.config(function($translateProvider) {
-//     // $translateProvider.useSanitizeValueStrategy('escape');
-//     // $translateProvider.preferredLanguage('pl');
-//     // $translateProvider.useStaticFilesLoader({
-//     //     prefix: 'js/languages/',
-//     //     suffix: '.json'
-//     // });
-// });
+mycarapp.config(function($translateProvider) {
+    $translateProvider.useSanitizeValueStrategy('escape');
+    $translateProvider.preferredLanguage('pl');
+    $translateProvider.useStaticFilesLoader({
+        prefix: 'js/languages/',
+        suffix: '.json'
+    });
+});

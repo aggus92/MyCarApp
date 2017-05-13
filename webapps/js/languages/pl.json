@@ -7,5 +7,6 @@
 	"COMMON_REPORTS"                                  : "Raporty",
 	"COMMON_STATISTICS"                               : "Statystyki",
 	"COMMON_REMINDERS"                                : "Przypomnienia",
-	"COMMON_START"                                    : "Home"
+	"COMMON_START"                                    : "Samochód",
+	"COMMON_COSTS"                                    : "Koszty"
 }

@@ -52,6 +52,12 @@ mycarapp.config(function($stateProvider, $urlRouterProvider, $controllerProvider
             url: '/home',
             templateUrl: 'views/startTemplate.html'
         })
+        .state('costs', {
+            url: '/costs',
+            templateUrl: 'views/costsTemplate.html',
+            controller: 'CostsCtrl',
+            resolve: loader(['CostsCtrl'])
+        })
         .state('reports', {
             //params: {'reports': null},
             url: '/reports',

@@ -7,5 +7,6 @@
 	"COMMON_REPORTS"                                  : "Reports",
 	"COMMON_STATISTICS"                               : "Statistics",
 	"COMMON_REMINDERS"                                : "Reminders",
-	"COMMON_START"                                    : "Home"
+	"COMMON_START"                                    : "Car",
+	"COMMON_COSTS"                                    : "Costs"
 }

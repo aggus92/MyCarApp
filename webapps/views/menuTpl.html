@@ -6,26 +6,47 @@
     <li><a ui-sref="reminders">{{'COMMON_REMINDERS' | translate}}</a></li>
     <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            {{'COMMON_LANGUAGE' | translate}}
+            {{'COMMON_SETTINGS' | translate}}
             <span class="caret"></span>
         </a>
-        <ul class="dropdown-menu">
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
             <li>
-                <a href="#" ng-click="switchLanguage('pl')">
-                    <i class="flag-icon flag-icon-pl"></i>
-                    {{'COMMON_LANGUAGE_POLISH' | translate}}
+                <a href="#">{{'COMMON_CHANGE_USER' | translate}}: &nbsp; {{firstName}} {{lastName}} &nbsp;
+                    <button type="button" class="btn btn-default btn-xs" ui-sref="user-list">
+                        <i class="fa fa-wrench"></i> {{'BUTTON_CHANGE' | translate}}
+                    </button>
                 </a>
             </li>
             <li>
-                <a href="#" ng-click="switchLanguage('en')">
-                    <i class="flag-icon flag-icon-gb"></i>
-                    {{'COMMON_LANGUAGE_ENGLISH' | translate}}
+                <a href="#">{{'COMMON_CHANGE_CAR' | translate}}: &nbsp; {{firstName}} {{lastName}} &nbsp;
+                    <button type="button" class="btn btn-default btn-xs" ui-sref="car-list">
+                        <i class="fa fa-wrench"></i> {{'BUTTON_CHANGE' | translate}}
+                    </button>
                 </a>
+            </li>
+            <li class="divider"></li>
+            <li class="dropdown-submenu">
+                <a href="#">
+                    {{'COMMON_LANGUAGE' | translate}}
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="#" ng-click="switchLanguage('pl')">
+                            <i class="flag-icon flag-icon-pl"></i>
+                            {{'COMMON_LANGUAGE_POLISH' | translate}}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" ng-click="switchLanguage('en')">
+                            <i class="flag-icon flag-icon-gb"></i>
+                            {{'COMMON_LANGUAGE_ENGLISH' | translate}}
+                        </a>
+                    </li>
+                </ul>
             </li>
         </ul>
     </li>
 </ul>
-
 <ul class="nav navbar-nav navbar-right">
 </ul>
 

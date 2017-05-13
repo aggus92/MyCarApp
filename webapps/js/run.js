@@ -50,4 +50,8 @@ mycarapp.run(['$rootScope','$translate', function($rootScope, $translate) {
         $rootScope.currentState = to.name;
     });
 
+    $rootScope.getDefaultUser = function() {
+        
+    }
+
 }]);

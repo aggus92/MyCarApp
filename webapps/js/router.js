@@ -45,7 +45,7 @@ mycarapp.config(function($stateProvider, $urlRouterProvider, $controllerProvider
         };
     }
 
-    $urlRouterProvider.otherwise('home');
+    // $urlRouterProvider.otherwise('home');
 
     $stateProvider
         .state('home', {
@@ -76,5 +76,17 @@ mycarapp.config(function($stateProvider, $urlRouterProvider, $controllerProvider
             templateUrl: 'views/remindersTemplate.html',
             controller: 'RemindersCtrl',
             resolve: loader(['RemindersCtrl'])
+        })
+        .state('user-list', {
+            url: '/user-list',
+            templateUrl: 'views/userListTpl.html',
+            controller: 'UserListCtrl',
+            resolve: loader(['UserListCtrl'])
+        })
+        .state('car-list', {
+            url: '/car-list',
+            templateUrl: 'views/carListTpl.html',
+            controller: 'CarListCtrl',
+            resolve: loader(['CarListCtrl'])
         })
 });

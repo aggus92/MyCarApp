@@ -8,5 +8,10 @@
 	"COMMON_STATISTICS"                               : "Statystyki",
 	"COMMON_REMINDERS"                                : "Przypomnienia",
 	"COMMON_START"                                    : "Samochód",
-	"COMMON_COSTS"                                    : "Koszty"
+	"COMMON_COSTS"                                    : "Koszty",
+	"COMMON_SETTINGS"                                 : "Ustawienia",
+	"COMMON_CHANGE_USER"                              : "Użytkownik",
+	"COMMON_CHANGE_CAR"                               : "Samochód",
+	"BUTTON_CHANGE"                                   : "Zmień",
+	"MENU_ITEM_USER_LIST"							  : "Lista użytkowników"
 }

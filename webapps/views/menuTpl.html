@@ -12,8 +12,8 @@
         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
             <li>
                 <a href="#">{{'COMMON_CHANGE_USER' | translate}}: &nbsp; {{firstName}} {{lastName}} &nbsp;
-                    <button type="button" class="btn btn-default btn-xs" ui-sref="user-list">
-                        <i class="fa fa-wrench"></i> {{'BUTTON_CHANGE' | translate}}
+                    <button type="button" class="btn btn-default btn-xs" ui-sref="user-edit">
+                        <i class="fa fa-pencil-square-o"></i> {{'BUTTON_EDIT' | translate}}
                     </button>
                 </a>
             </li>
@@ -45,6 +45,12 @@
                 </ul>
             </li>
         </ul>
+    </li>
+    <li>
+        <a href="#" ng-click="Logout()">
+            <i class="fa fa-sign-out"></i>
+            {{'COMMON_SIGN_OUT' | translate}}
+        </a>
     </li>
 </ul>
 <ul class="nav navbar-nav navbar-right">

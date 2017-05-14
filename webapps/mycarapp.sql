@@ -6,6 +6,8 @@ CREATE TABLE IF NOT EXISTS `user` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `firstName` VARCHAR(200) NOT NULL,
   `lastName` VARCHAR(200) NOT NULL,
+  `username` VARCHAR(50) NOT NULL,
+  `password` VARCHAR(20) NOT NULL,
   PRIMARY KEY (`id`)
 );
 

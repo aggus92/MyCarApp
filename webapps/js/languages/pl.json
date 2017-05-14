@@ -12,6 +12,18 @@
 	"COMMON_SETTINGS"                                 : "Ustawienia",
 	"COMMON_CHANGE_USER"                              : "Użytkownik",
 	"COMMON_CHANGE_CAR"                               : "Samochód",
+	"COMMON_SIGN_OUT"								  : "Wyloguj",
+	"COMMON_LOGIN"								      : "Zaloguj się",
+	"COMMON_REGISTER"								  : "Rejestracja",
+	"COMMON_USERNAME"								  : "Nazwa użytkownika",
+	"COMMON_PASSWORD"								  : "Hasło",
+	"COMMON_FIRSTNAME"								  : "Imię",
+	"COMMON_LASTNAME"								  : "Nazwisko",
+	"COMMON_REQUIRED"						  		  : "Pole wymagane",
 	"BUTTON_CHANGE"                                   : "Zmień",
+	"BUTTON_EDIT"                                     : "Edytuj",
+	"BUTTON_LOGIN"							     	  : "Zaloguj się",
+	"BUTTON_REGISTER"								  : "Rejestracja",
+	"BUTTON_CANCEL"									  : "Anuluj",
 	"MENU_ITEM_USER_LIST"							  : "Lista użytkowników"
 }

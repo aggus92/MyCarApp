@@ -12,6 +12,18 @@
 	"COMMON_SETTINGS"                                 : "Settings",
 	"COMMON_CHANGE_USER"                              : "User",
 	"COMMON_CHANGE_CAR"                               : "Car",
+	"COMMON_SIGN_OUT"								  : "Sign out",
+	"COMMON_LOGIN"								      : "Login",
+	"COMMON_REGISTER"								  : "Register",
+	"COMMON_USERNAME"								  : "Username",
+	"COMMON_PASSWORD"								  : "Password",
+	"COMMON_FIRSTNAME"								  : "First name",
+	"COMMON_LASTNAME"								  : "Last name",
+	"COMMON_REQUIRED"						  		  : "Field required",
 	"BUTTON_CHANGE"                                   : "Change",
+	"BUTTON_EDIT"                                     : "Edit",
+	"BUTTON_LOGIN"								      : "Sign in",
+	"BUTTON_REGISTER"								  : "Register",
+	"BUTTON_CANCEL"									  : "Cancel",
 	"MENU_ITEM_USER_LIST"							  : "User list"
 }

@@ -48,6 +48,18 @@ mycarapp.config(function($stateProvider, $urlRouterProvider, $controllerProvider
     // $urlRouterProvider.otherwise('home');
 
     $stateProvider
+        .state('login', {
+            url: '/login',
+            templateUrl: 'views/loginTemplate.html',
+            controller: 'LoginCtrl',
+            resolve: loader(['LoginCtrl'])
+        })
+        .state('register', {
+            url: '/register',
+            templateUrl: 'views/registerTemplate.html',
+            controller: 'RegisterCtrl',
+            resolve: loader(['RegisterCtrl'])
+        })
         .state('home', {
             url: '/home',
             templateUrl: 'views/startTemplate.html'
@@ -77,8 +89,8 @@ mycarapp.config(function($stateProvider, $urlRouterProvider, $controllerProvider
             controller: 'RemindersCtrl',
             resolve: loader(['RemindersCtrl'])
         })
-        .state('user-list', {
-            url: '/user-list',
+        .state('user-edit', {
+            url: '/user-edit',
             templateUrl: 'views/userListTpl.html',
             controller: 'UserListCtrl',
             resolve: loader(['UserListCtrl'])

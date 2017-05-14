@@ -3,7 +3,7 @@
  */
 'use strict';
 
-mycarapp.controller('RegisterCtrl', ['$scope', '$rootScope', '$translate', function($scope, $rootScope, $translate) {
+mycarapp.controller('RegisterCtrl', ['$scope', '$rootScope', '$translate', '$http', function($scope, $rootScope, $translate, $http) {
 
     $scope.register = function (user) {
         $http.post("ajax/addUser.php", user).then(function (response) {

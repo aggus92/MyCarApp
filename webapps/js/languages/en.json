@@ -25,5 +25,6 @@
 	"BUTTON_LOGIN"								      : "Sign in",
 	"BUTTON_REGISTER"								  : "Register",
 	"BUTTON_CANCEL"									  : "Cancel",
-	"MENU_ITEM_USER_LIST"							  : "User list"
+	"MENU_ITEM_USER_LIST"							  : "User list",
+	"NOTIFICATION_ADD_NEW_USER"						  : "Added new user"
 }

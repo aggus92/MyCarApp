@@ -3,7 +3,11 @@
  */
 'use strict';
 
-mycarapp.controller('LoginCtrl', ['$scope', '$rootScope', '$translate', function($scope, $rootScope, $translate) {
+mycarapp.controller('LoginCtrl', ['$scope', '$rootScope', '$translate', '$http', function($scope, $rootScope, $translate, $http) {
 
-
+    $scope.login = function(user) {
+        $http.get("ajax/getUser.php", user).then(function (response) {
+            console.log(response);
+        });
+    }
 }]);

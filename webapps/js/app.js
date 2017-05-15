@@ -7,7 +7,8 @@ var mycarapp = angular.module('mycarapp', [
     'ngRoute',
     'ncy-angular-breadcrumb',
     'pascalprecht.translate',
-    'ngCookies'
+    'ngCookies',
+    'angular-growl'
 ]);
 
 mycarapp.config(function($translateProvider) {

@@ -3,15 +3,15 @@
  */
 'use strict';
 
-mycarapp.controller('RegisterCtrl', ['$scope', '$rootScope', '$translate', '$http', function($scope, $rootScope, $translate, $http) {
+mycarapp.controller('RegisterCtrl', ['$scope', '$rootScope', '$translate', '$http', 'growl', function($scope, $rootScope, $translate, $http, growl) {
 
     $scope.register = function (user) {
         $http.post("ajax/addUser.php", user).then(function (response) {
-                $scope.newUser = response.data.user;
-                console.log(response.data.user);
+            if (response.status === 200) {
+                growl.success("NOTIFICATION_ADD_NEW_USER");
+            }
         });
     }
 
 }]);
-
 

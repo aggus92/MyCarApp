@@ -1,6 +1,6 @@
 <div class="col-md-6 col-md-offset-3">
     <h2>{{'COMMON_LOGIN' | translate}}</h2>
-    <form name="form" ng-submit="login()" role="form">
+    <form name="form" ng-submit="login(user)" role="form">
         <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
             <label for="username">{{'COMMON_USERNAME' | translate}}</label>
             <input type="text" name="username" id="username" class="form-control" ng-model="user.username" required />

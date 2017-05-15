@@ -25,5 +25,6 @@
 	"BUTTON_LOGIN"							     	  : "Zaloguj się",
 	"BUTTON_REGISTER"								  : "Rejestracja",
 	"BUTTON_CANCEL"									  : "Anuluj",
-	"MENU_ITEM_USER_LIST"							  : "Lista użytkowników"
+	"MENU_ITEM_USER_LIST"							  : "Lista użytkowników",
+	"NOTIFICATION_ADD_NEW_USER"						  : "Dodano nowego użytkownika"
 }

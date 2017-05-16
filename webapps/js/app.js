@@ -11,6 +11,12 @@ var mycarapp = angular.module('mycarapp', [
     'angular-growl'
 ]);
 
+mycarapp.config(['growlProvider', function(growlProvider) {
+    growlProvider.globalPosition('top-right');
+    growlProvider.globalTimeToLive(3000);
+    growlProvider.onlyUniqueMessages(false);
+}]);
+
 mycarapp.config(function($translateProvider) {
     $translateProvider.useSanitizeValueStrategy('escape');
     $translateProvider.preferredLanguage('pl');

@@ -7,7 +7,9 @@ mycarapp.controller('LoginCtrl', ['$scope', '$rootScope', '$translate', '$http',
 
     $scope.login = function(user) {
         $http.get("ajax/getUser.php", user).then(function (response) {
-            console.log(response);
+            if (response.data.records.length > 0) {
+
+            }
         });
     }
 }]);

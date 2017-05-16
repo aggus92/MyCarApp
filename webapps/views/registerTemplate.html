@@ -22,7 +22,7 @@
             <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">{{'COMMON_REQUIRED' | translate}}</span>
         </div>
         <div class="form-actions">
-            <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary">{{'BUTTON_REGISTER' | translate}}</button>
+            <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">{{'BUTTON_REGISTER' | translate}}</button>
             <a href="#" class="btn btn-link" ui-sref="login">{{'BUTTON_CANCEL' | translate}}</a>
         </div>
     </form>

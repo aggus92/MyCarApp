@@ -1,6 +1,6 @@
 <div class="col-md-6 col-md-offset-3">
-    <h2>{{'COMMON_REGISTER' | translate}}</h2>
-    <form name="form" ng-submit="register(user)" role="form">
+    <h2 class="header-h2">{{'COMMON_REGISTER' | translate}}</h2>
+    <form name="form" ng-submit="register(user)" role="form" style="margin-top: 30px">
         <div class="form-group" ng-class="{ 'has-error': form.firstName.$dirty && form.firstName.$error.required }">
             <label for="username">{{'COMMON_FIRSTNAME' | translate}}</label>
             <input type="text" name="firstName" id="firstName" class="form-control" ng-model="user.firstName" required />
@@ -22,8 +22,8 @@
             <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">{{'COMMON_REQUIRED' | translate}}</span>
         </div>
         <div class="form-actions">
-            <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">{{'BUTTON_REGISTER' | translate}}</button>
-            <a href="#" class="btn btn-link" ui-sref="login">{{'BUTTON_CANCEL' | translate}}</a>
+            <button type="submit" ng-disabled="form.$invalid" class="btn button-default">{{'BUTTON_REGISTER' | translate}}</button>
+            <button class="btn button-default" ui-sref="login">{{'BUTTON_CANCEL' | translate}}</button>
         </div>
     </form>
 </div>

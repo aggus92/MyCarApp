@@ -1,20 +1,24 @@
 <h2 class="header-h2"> {{'MENU_ITEM_ADD_NEW_CAR' | translate}}</h2>
 
-<div class="main-content__outline">
-    <div class="input-group">
-		<span class="input-group-addon" id="basic-addon1">{{'COMMON_CAR_MODEL' | translate}}</span>
-		<input type="text" class="form-control" ng-model="car.model" ng-disabled="true">
-	</div>
-	<br>
-	<div class="input-group">
-		<span class="input-group-addon" id="basic-addon1">{{'COMMON_CAR_YEAR' | translate}}</span>
-		<input type="text" class="form-control" ng-model="car.year">
-	</div>
-	<br>
-	<div class="input-group">
-		<span class="input-group-addon" id="basic-addon1">{{'COMMON_CAR_COLOR' | translate}}</span>
-		<input type="text" class="form-control" ng-model="car.color">
-	</div>
-	<br>
-	<button class="btn button-default pull-right" ng-click="saveCar()">{{'BUTTON_SAVE' | translate}}</button>
-</div>
+<form name="carForm" ng-submit="savePhone($index)" novalidate>
+	<fieldset>
+		<div class="row">
+			<div class="input-group">
+				<span class="input-group-addon">{{'COMMON_CAR_MODEL' | translate}}</span>
+				<input type="text" class="form-control" ng-model="car.model" required>
+			</div>
+			<br>
+			<div class="input-group">
+				<span class="input-group-addon">{{'COMMON_CAR_YEAR' | translate}}</span>
+				<input type="text" class="form-control" ng-model="car.year" ng-pattern="/^\d{4}$/" required>
+			</div>
+			<br>
+			<div class="input-group">
+				<span class="input-group-addon">{{'COMMON_CAR_COLOR' | translate}}</span>
+				<input type="text" class="form-control" ng-model="car.color" required>
+			</div>
+			<br>
+			<button class="btn button-default pull-right" ng-click="saveCar()" ng-disabled="!carForm.$valid">{{'BUTTON_SAVE' | translate}}</button>
+		</div>
+	</fieldset>
+</form>

@@ -3,7 +3,7 @@
  */
 'use strict';
 
-mycarapp.controller('CarListCtrl', ['$scope', '$rootScope', '$translate', '$state', function($scope, $rootScope, $translate, $state) {
+mycarapp.controller('CarListCtrl', ['$scope', '$rootScope', '$translate', '$state', 'growl', function($scope, $rootScope, $translate, $state, growl) {
 	
 	$scope.userCars = [];
 	
@@ -16,12 +16,12 @@ mycarapp.controller('CarListCtrl', ['$scope', '$rootScope', '$translate', '$stat
 		});
 	};
 	
-	$scope.swicthCar = function(car) {
+	$scope.switchCar = function(car) {
 		
 	};
 	
 	$scope.addNewCar = function() {
-		var isFirstCar = $scope.userCars.length > 0;
-		$state.go('car-list.add', {'message': isFirstCar});
+		var isFirstCar = $scope.userCars.length === 0;
+		$state.go('car-list.add', {'isFirstCar': isFirstCar});
 	}
 }]);

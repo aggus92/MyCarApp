@@ -104,22 +104,32 @@ mycarapp.config(function($stateProvider, $urlRouterProvider, $controllerProvider
 			params: {'carToEdit': null},
             url: '/edit',
 			views: {
-                'car-list.edit@car-list': {
+                '@': {
                     templateUrl: 'views/carEditTpl.html',
-                    controller: 'CarEditCtrl',
+                    controller: 'CarEditCtrl'
                 }
             },
-            resolve: loader(['CarEditCtrl'])
+            resolve: loader(['CarEditCtrl']),
+            onEnter: function($state, $stateParams) {
+                if ($stateParams.carToEdit === null) {
+                    $state.go('car-list');
+                };
+            }
         })
 		.state('car-list.add', {
 			params: {'isFirstCar': null},
             url: '/add',
 			views: {
-                'car-list.add@car-list': {
+                '@': {
                     templateUrl: 'views/addCarTpl.html',
-                    controller: 'AddCarCtrl',
+                    controller: 'AddCarCtrl'
                 }
             },
-            resolve: loader(['AddCarCtrl'])
+            resolve: loader(['AddCarCtrl']),
+            onEnter: function($state, $stateParams) {
+                if ($stateParams.isFirstCar === null) {
+                    $state.go('car-list');
+                };
+            }
         })
 });

@@ -8,7 +8,7 @@ mycarapp.controller('RegisterCtrl', ['$scope', '$rootScope', '$translate', '$htt
     $scope.register = function (user) {
         $http.post("ajax/addUser.php", user).then(function (response) {
             if (response.status === 200) {
-                growl.success("NOTIFICATION_ADD_NEW_USER");
+                growl.addSuccessMessage("NOTIFICATION_ADD_NEW_USER");
             }
         });
     }

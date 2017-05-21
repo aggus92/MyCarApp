@@ -71,7 +71,6 @@ mycarapp.config(function($stateProvider, $urlRouterProvider, $controllerProvider
             resolve: loader(['CostsCtrl'])
         })
         .state('reports', {
-            //params: {'reports': null},
             url: '/reports',
             templateUrl: 'views/reportsTemplate.html',
             controller: 'ReportsCtrl',
@@ -100,5 +99,27 @@ mycarapp.config(function($stateProvider, $urlRouterProvider, $controllerProvider
             templateUrl: 'views/carListTpl.html',
             controller: 'CarListCtrl',
             resolve: loader(['CarListCtrl'])
+        })
+		.state('car-list.edit', {
+			params: {'carToEdit': null},
+            url: '/edit',
+			views: {
+                'car-list.edit@car-list': {
+                    templateUrl: 'views/carEditTpl.html',
+                    controller: 'CarEditCtrl',
+                }
+            },
+            resolve: loader(['CarEditCtrl'])
+        })
+		.state('car-list.add', {
+			params: {'isFirstCar': null},
+            url: '/add',
+			views: {
+                'car-list.add@car-list': {
+                    templateUrl: 'views/addCarTpl.html',
+                    controller: 'AddCarCtrl',
+                }
+            },
+            resolve: loader(['AddCarCtrl'])
         })
 });

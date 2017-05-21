@@ -15,9 +15,13 @@ mycarapp.controller('LoginCtrl', ['$scope', '$rootScope', '$translate', '$http',
 			if (response.data.records.length === 1) {
 				$rootScope.globals = {
 					currentUser: {
-						username: response.data.records[0].username
+						username: response.data.records[0].username,
+						firstName: response.data.records[0].firstName,
+						lastName: response.data.records[0].lastName,
+						id: response.data.records[0].id
 					}
 				};
+				$rootScope.getDefaultUserCar();
 				$state.go('home');
 			}
 		});

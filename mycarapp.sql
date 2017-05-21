@@ -14,6 +14,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 CREATE TABLE IF NOT EXISTS `car` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `user_id` INT NOT NULL,
+  `is_default` TINYINT(1),
   `model` VARCHAR(200) NOT NULL,
   `year` VARCHAR(10) NOT NULL,
   `color` VARCHAR(20),

@@ -6,6 +6,8 @@
 mycarapp.run(['$rootScope', '$translate', '$cookieStore', '$http', '$location', function($rootScope, $translate, $cookieStore, $http, $location) {
 
     $rootScope.globals = $cookieStore.get('globals') || {};
+	
+	$rootScope.currentCar = null;
 
     if ($rootScope.globals.currentUser) {
         $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata;
@@ -17,6 +19,29 @@ mycarapp.run(['$rootScope', '$translate', '$cookieStore', '$http', '$location', 
         }
     };
     setPreferredLanguage('pl');
+	
+	$rootScope.getDefaultUserCar = function() {
+		$http.get('ajax/getDefaultCar.php', {
+			params: {
+				userId: $rootScope.globals.currentUser.id
+			}
+		}).then(function (response) {
+			if (response.data.records.length === 1) {
+				$rootScope.currentCar = {
+					user_id: response.data.records[0].user_id,
+					is_default: response.data.records[0].is_default,
+					model: response.data.records[0].model,
+					color: response.data.records[0].color,
+					year: response.data.records[0].year,
+					id: response.data.records[0].id
+					
+				};
+				$rootScope.getDefaultUserCar();
+				$state.go('home');
+			}
+		});
+		
+	};
 
     $rootScope.log = function(log) {
         if (typeof log === 'object') {

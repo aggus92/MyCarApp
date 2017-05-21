@@ -1,10 +1,20 @@
-<h1 class="header-h1"> {{'MENU_ITEM_USER_LIST' | translate}}</h1>
+<h2 class="header-h2"> {{'MENU_ITEM_USER' | translate}}</h2>
 
 <div class="main-content__outline">
-    <table>
-        <tr ng-repeat="x in names">
-            <td>{{ x.Name }}</td>
-            <td>{{ x.Country }}</td>
-        </tr>
-    </table>
+    <div class="input-group">
+		<span class="input-group-addon" id="basic-addon1">{{'COMMON_USERNAME' | translate}}</span>
+		<input type="text" class="form-control" ng-model="user.username" ng-disabled="true">
+	</div>
+	<br>
+	<div class="input-group">
+		<span class="input-group-addon" id="basic-addon1">{{'COMMON_FIRSTNAME' | translate}}</span>
+		<input type="text" class="form-control" ng-model="user.firstName">
+	</div>
+	<br>
+	<div class="input-group">
+		<span class="input-group-addon" id="basic-addon1">{{'COMMON_LASTNAME' | translate}}</span>
+		<input type="text" class="form-control" ng-model="user.lastName">
+	</div>
+	<br>
+	<button class="btn button-default pull-right" ng-click="save()">{{'BUTTON_SAVE' | translate}}</button>
 </div>

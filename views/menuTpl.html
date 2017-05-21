@@ -11,14 +11,14 @@
         </a>
         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
             <li>
-                <a href="#">{{'COMMON_CHANGE_USER' | translate}}: &nbsp; {{firstName}} {{lastName}} &nbsp;
+                <a href="#">{{'COMMON_CHANGE_USER' | translate}}: &nbsp; {{$root.globals.currentUser.username}} &nbsp;
                     <button type="button" class="btn btn-default btn-xs" ui-sref="user-edit">
                         <i class="fa fa-pencil-square-o"></i> {{'BUTTON_EDIT' | translate}}
                     </button>
                 </a>
             </li>
             <li>
-                <a href="#">{{'COMMON_CHANGE_CAR' | translate}}: &nbsp; {{firstName}} {{lastName}} &nbsp;
+                <a href="#">{{'COMMON_CHANGE_CAR' | translate}}: &nbsp; {{$root.currentCar.model}} &nbsp;
                     <button type="button" class="btn btn-default btn-xs" ui-sref="car-list">
                         <i class="fa fa-wrench"></i> {{'BUTTON_CHANGE' | translate}}
                     </button>
@@ -47,7 +47,7 @@
         </ul>
     </li>
     <li>
-        <a href="#" ng-click="Logout()">
+        <a href="#" ng-click="logout()">
             <i class="fa fa-sign-out"></i>
             {{'COMMON_SIGN_OUT' | translate}}
         </a>

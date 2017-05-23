@@ -105,11 +105,11 @@ mycarapp.config(function($stateProvider, $urlRouterProvider, $controllerProvider
             url: '/edit',
 			views: {
                 '@': {
-                    templateUrl: 'views/carEditTpl.html',
-                    controller: 'CarEditCtrl'
+                    templateUrl: 'views/editCarTpl.html',
+                    controller: 'EditCarCtrl'
                 }
             },
-            resolve: loader(['CarEditCtrl']),
+            resolve: loader(['EditCarCtrl']),
             onEnter: function($state, $stateParams) {
                 if ($stateParams.carToEdit === null) {
                     $state.go('car-list');

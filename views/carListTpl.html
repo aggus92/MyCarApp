@@ -5,6 +5,7 @@
 		  <tr>
 			<th>{{'TABLE_HEADER_CAR_MODEL' | translate}}</th>
 			<th>{{'TABLE_HEADER_CAR_YEAR' | translate}}</th>
+			<th>{{'TABLE_HEADER_CAR_COLOR' | translate}}</th>
             <th>&nbsp;</th>
           </tr>
 		</thead>
@@ -15,6 +16,9 @@
             </td>
             <td>
                 {{car.year}}
+            </td>
+			<td>
+                {{car.color}}
             </td>
             <td class="text-right">
                 <button type="button" class="btn button-default" ng-click="switchCar(car)">

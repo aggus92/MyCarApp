@@ -1,4 +1,4 @@
-<h2 class="header-h2"> {{'MENU_ITEM_ADD_NEW_CAR' | translate}}</h2>
+<h2 class="header-h2"> {{'MENU_ITEM_EDIT_CAR' | translate}}</h2>
 
 <form name="carForm" novalidate>
 	<fieldset>
@@ -17,6 +17,11 @@
 				<span class="input-group-addon">{{'COMMON_CAR_COLOR' | translate}}</span>
 				<input type="text" class="form-control" ng-model="car.color" required>
 			</div>
+			<br>
+			<div class="checkbox checkbox-primary">
+                <input type="checkbox" id="isDefault" ng-value="true" ng-model="car.is_default">
+                <label for="isDefault">{{'COMMON_CAR_IS_DEFAULT' | translate}}</label>
+            </div>
 			<br>
 			<button class="btn button-default pull-right" ng-click="saveCar()" ng-disabled="!carForm.$valid">{{'BUTTON_SAVE' | translate}}</button>
 		</div>

@@ -7,7 +7,7 @@ $conn = new mysqli("10.254.94.2", "s174966", "PgsHqxfj", "s174966");
 
 $userId = $_GET["userId"];
 
-$result = $conn->query("SELECT id, user_id, is_default, model, year, color FROM car where user_id = '$userId' and is_default = 1");
+$result = $conn->query("SELECT id, user_id, is_default, model, color, year FROM car where user_id = '$userId'");
 
 $outp = "";
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {

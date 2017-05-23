@@ -8,7 +8,8 @@ var mycarapp = angular.module('mycarapp', [
     'ncy-angular-breadcrumb',
     'pascalprecht.translate',
     'ngCookies',
-    'angular-growl'
+    'angular-growl',
+	'base64'
 ]);
 
 mycarapp.config(['growlProvider', function(growlProvider) {

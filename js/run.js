@@ -3,15 +3,10 @@
  */
 'use strict';
 
-mycarapp.run(['$rootScope', '$translate', '$cookieStore', '$http', '$location', function($rootScope, $translate, $cookieStore, $http, $location) {
+mycarapp.run(['$rootScope', '$translate', '$cookieStore', '$http', '$location', '$state', function($rootScope, $translate, $cookieStore, $http, $location, $state) {
 
     $rootScope.globals = $cookieStore.get('globals') || {};
-	
 	$rootScope.currentCar = null;
-
-    if ($rootScope.globals.currentUser) {
-        $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata;
-    };
 
     var setPreferredLanguage = function(lang) {
         if (lang !== null && lang !== undefined) {
@@ -26,22 +21,18 @@ mycarapp.run(['$rootScope', '$translate', '$cookieStore', '$http', '$location', 
 				userId: $rootScope.globals.currentUser.id
 			}
 		}).then(function (response) {
+			console.log(response);
 			if (response.data.records.length === 1) {
-				$rootScope.currentCar = {
-					user_id: response.data.records[0].user_id,
-					is_default: response.data.records[0].is_default,
-					model: response.data.records[0].model,
-					color: response.data.records[0].color,
-					year: response.data.records[0].year,
-					id: response.data.records[0].id
-					
-				};
-				$rootScope.getDefaultUserCar();
-				$state.go('home');
+				$rootScope.currentCar = response.data.records[0];
 			}
 		});
-		
+		$state.go('home');
 	};
+	
+	if ($rootScope.globals.currentUser) {
+		$rootScope.getDefaultUserCar();
+        $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata;
+    };
 
     $rootScope.log = function(log) {
         if (typeof log === 'object') {
@@ -87,7 +78,7 @@ mycarapp.run(['$rootScope', '$translate', '$cookieStore', '$http', '$location', 
         var loggedIn = $rootScope.globals.currentUser;
         if (restrictedPage && !loggedIn) {
             $location.path('/login');
-        }
+        } 
     });
 
 

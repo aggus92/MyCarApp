@@ -21,7 +21,6 @@ mycarapp.run(['$rootScope', '$translate', '$cookieStore', '$http', '$location', 
 				userId: $rootScope.globals.currentUser.id
 			}
 		}).then(function (response) {
-			console.log(response);
 			if (response.data.records.length === 1) {
 				$rootScope.currentCar = response.data.records[0];
 			}

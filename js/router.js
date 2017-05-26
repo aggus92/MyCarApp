@@ -70,6 +70,16 @@ mycarapp.config(function($stateProvider, $urlRouterProvider, $controllerProvider
             controller: 'CostsCtrl',
             resolve: loader(['CostsCtrl'])
         })
+		.state('costs.add', {
+            url: '/add',
+			views: {
+                '@': {
+                    templateUrl: 'views/addCostTpl.html',
+                    controller: 'AddCostCtrl'
+                }
+            },
+            resolve: loader(['AddCostCtrl'])
+        })
         .state('reports', {
             url: '/reports',
             templateUrl: 'views/reportsTemplate.html',

@@ -1,6 +1,6 @@
 'use strict';
 
-mycarapp.controller('EditCarCtrl', ['$scope', '$rootScope', '$translate', '$stateParams', function($scope, $rootScope, $translate, $stateParams) {
+mycarapp.controller('EditCarCtrl', ['$scope', '$rootScope', '$translate', '$stateParams', '$http', function($scope, $rootScope, $translate, $stateParams, $http) {
 	
 	$scope.car = $stateParams.carToEdit;
 	
@@ -20,3 +20,4 @@ mycarapp.controller('EditCarCtrl', ['$scope', '$rootScope', '$translate', '$stat
     }
 
 }]);
+

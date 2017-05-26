@@ -1,1 +1,58 @@
-costsTemplate
+<h2 class="header-h2"></h3>
+<div class="row">
+    <div class="col-md-12">
+        <div class="col-sm-3" style="padding-left: 0;">
+            <label></label>
+            <ui-select ng-model="dates.objectType">
+                <ui-select-match>
+                    {{$select.selected.type | translate}}
+                </ui-select-match>
+                <ui-select-choices repeat="item in objectTypes">
+                    <span>{{item.type | translate}}</span>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+        <div class="col-md-8">
+            <div class="col-sm-6" style="padding-left: 0;">
+                <div>{{'COMMON_DATE_FROM' | translate}}:</div>
+                <p class="input-group">
+                    <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dates.startDate" is-open="state.open" max-date="maxDate" datepicker-options="dateOptions" ng-required="true" close-text="Close" show-button-bar="false"/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn button-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+            </div>
+            <div class="col-sm-6" style="padding-left: 0;">
+                <div>{{'COMMON_DATE_TO' | translate}}:</div>
+                <p class="input-group">
+					<input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dates.endDate" is-open="state.open2" max-date="maxDate" datepicker-options="dateOptions" ng-required="true" close-text="Close" show-button-bar="false"/>
+					<span class="input-group-btn">
+						<button type="button" class="btn button-default" ng-click="open2($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+					</span>
+				</p>
+            </div>
+        </div>
+        <div class="col-md-1 margin-top-20">
+            <button class="btn button-default" ng-click="search()">
+                {{'BUTTON_SEARCH' | translate}}
+            </button>
+        </div>
+    </div>
+</div>
+<div class="row>
+	<div class="col-md-12">
+		<button class="btn button-default pull-right" ng-click="addCost()">{{'BUTTON_NEW_COST' | translate}}</button>
+		<table class="table">
+			<thead>
+			  <tr>
+				
+			  </tr>
+			</thead>
+			<tbody>
+			  <tr ng-repeat="cost in costsList track by $index">
+				
+			  </tr>
+			</tbody>
+	  </table>
+	</div>
+</div>

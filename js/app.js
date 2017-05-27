@@ -9,8 +9,14 @@ var mycarapp = angular.module('mycarapp', [
     'pascalprecht.translate',
     'ngCookies',
     'angular-growl',
-	'base64'
+	'base64',
+    'ui.bootstrap',
+    'ui.select'
 ]);
+
+mycarapp.config(function(uiSelectConfig) {
+    uiSelectConfig.theme = 'bootstrap';
+});
 
 mycarapp.config(['growlProvider', function(growlProvider) {
     growlProvider.globalTimeToLive(3000);

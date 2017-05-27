@@ -3,8 +3,8 @@
  */
 'use strict';
 
-mycarapp.controller('AddCostCtrl', ['$scope', '$rootScope', '$translate', '$state', '$http', function($scope, $rootScope, $translate, $state, $http) {
-	
+mycarapp.controller('AddCostCtrl', ['$scope', '$rootScope', '$translate', '$state', '$stateParams', '$http', function($scope, $rootScope, $translate, $state, $stateParams, $http) {
+
 	$scope.saveCost = function() {
 		$http.post("ajax/addCost.php").then(function (response) {
 			console.log(response);

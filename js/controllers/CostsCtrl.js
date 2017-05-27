@@ -8,44 +8,66 @@ mycarapp.controller('CostsCtrl', ['$scope', '$rootScope', '$translate', '$state'
 	$scope.maxDate = new Date();
     $scope.maxDate.setDate($scope.maxDate.getDate());
     var dateEnd = new Date();
-    dateEnd.setHours(23);
-    dateEnd.setMinutes(59);
-    dateEnd.setSeconds(59);
     var dateStart = new Date(dateEnd);
     dateStart.setDate(dateEnd.getDate() - 7);
-    dateStart.setHours(0);
-    dateStart.setMinutes(0);
-    dateStart.setSeconds(1);
 	
 	$scope.dates = {
+        objectType: {type: 'COMMON_COST_PETROL', value: 'PETROL'},
         endDate: new Date(dateEnd),
         startDate: dateStart
-    }
+    };
 	
 	$scope.objectTypes = [
-       
+        {type:'COMMON_COST_PETROL', value: 'PETROL'},
+        {type:'COMMON_COST_OPERATING', value: 'OPERATING'},
+        {type:'COMMON_COST_TECH_REVIEW', value: 'TECH'},
+        {type:'COMMON_COST_REGISTRATION', value: 'REGISTRATION'},
+        {type:'COMMON_COST_GENERAL', value: 'GENERAL'}
     ];
+
+    $scope.search = function() {
+        console.log($scope.dates);
+        if ($scope.dates.objectType.value === 'GENERAL') {
+            $http.get('ajax/getGeneralCosts.php', {
+                params: {
+                    carId: $rootScope.currentCar.id
+                }
+            }).then(function (response) {
+                console.log(response);
+                if (response.data.records.length > 0) {
+                    $scope.userCars = response.data.records;
+                }
+            });
+        } else {
+            $http.get('ajax/getCosts.php', {
+                params: {
+                    carId: $rootScope.currentCar.id,
+                    type: $scope.dates.objectType.value,
+                    startDate: $scope.dates.startDate,
+                    endDate: $scope.dates.endDate
+                }
+            }).then(function (response) {
+                console.log(response);
+                if (response.data.records.length > 0) {
+                    $scope.userCars = response.data.records;
+                }
+            });
+        }
+    };
+
+    //$scope.search();
 	
 	$scope.addCost = function() {
 		$state.go('costs.add');
-	}
+	};
 	
-	$scope.search = function() {
-	}
-	
-	$scope.open = function($event) {
-        $event.preventDefault();
-        $event.stopPropagation();
-
+	$scope.open = function() {
         $scope.state = {
             open: true
         };
     };
 
-    $scope.open2 = function($event) {
-        $event.preventDefault();
-        $event.stopPropagation();
-
+    $scope.open2 = function() {
         $scope.state = {
             open2: true
         };
@@ -55,5 +77,15 @@ mycarapp.controller('CostsCtrl', ['$scope', '$rootScope', '$translate', '$state'
         formatYear: 'yyyy',
         startingDay: 1
     };
+
+    $scope.state = {
+        open: false
+    };
+
+    $scope.state = {
+        open2: false
+    };
+
+    $scope.format = 'dd-MM-yyyy';
 	
 }]);

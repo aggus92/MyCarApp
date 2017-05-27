@@ -1,1 +1,20 @@
-add cost
+<div class="row">
+    <div class="col-md-12">
+        <div class="col-md-6" ng-init="costTypes = 'operatingCost'">
+            <div class="radio radio-primary">
+                <input type="radio" id="operatingCost" value="operatingCost" ng-model="costTypes">
+                <label for="operatingCost">{{'COMMON_OPERATING_COSTS' | translate}}</label>
+            </div>
+            <div class="radio radio-primary">
+                <input type="radio" id="generalCost" value="generalCost" ng-model="costTypes">
+                <label for="generalCost">{{'COMMON_GENERAL_COSTS' | translate}}</label>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" ng-if="costTypes == 'operatingCost'">
+    operatingCost
+</div>
+<div class="row" ng-if="costTypes == 'generalCost'">
+    generalCost
+</div>

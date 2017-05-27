@@ -1,6 +1,6 @@
 'use strict';
 
-mycarapp.controller('AddCarCtrl', ['$scope', '$rootScope', '$translate','$stateParams', '$http', function($scope, $rootScope, $translate, $stateParams, $http) {
+mycarapp.controller('AddCarCtrl', ['$scope', '$rootScope', '$translate', '$stateParams', '$http', function($scope, $rootScope, $translate, $stateParams, $http) {
 	
 	$scope.isDefault = $stateParams.isFirstCar;
 	

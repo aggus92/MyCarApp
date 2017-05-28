@@ -1,20 +1,42 @@
+<h2 class="header-h2"> {{'MENU_ITEM_ADD_NEW_COST' | translate}}</h2>
 <div class="row">
     <div class="col-md-12">
         <div class="col-md-6" ng-init="costTypes = 'operatingCost'">
             <div class="radio radio-primary">
-                <input type="radio" id="operatingCost" value="operatingCost" ng-model="costTypes">
+                <input type="radio" id="operatingCost" value="operatingCosts" ng-model="costTypes">
                 <label for="operatingCost">{{'COMMON_OPERATING_COSTS' | translate}}</label>
             </div>
             <div class="radio radio-primary">
-                <input type="radio" id="generalCost" value="generalCost" ng-model="costTypes">
+                <input type="radio" id="generalCost" value="generalCosts" ng-model="costTypes">
                 <label for="generalCost">{{'COMMON_GENERAL_COSTS' | translate}}</label>
             </div>
         </div>
     </div>
 </div>
-<div class="row" ng-if="costTypes == 'operatingCost'">
+<div class="row" ng-if="costTypes == 'operatingCosts'">
     operatingCost
 </div>
-<div class="row" ng-if="costTypes == 'generalCost'">
-    generalCost
+<div class="row" ng-if="costTypes == 'generalCosts'">
+    <div class="col-md-12">
+        <div class="input-group">
+            <p class="input-group">
+                <span class="input-group-addon">{{'COMMON_DATE' | translate}}</span>
+                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="generalCost.date" is-open="state.open" datepicker-options="dateOptions" ng-required="true" close-text="Close" show-button-bar="false"/>
+                <span class="input-group-btn">
+                    <button type="button" class="btn button-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </p>
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon">{{'COMMON_TYPE' | translate}}</span>
+            <input type="text" class="form-control" maxlength="200" ng-model="generalCost.type">
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-addon">{{'COMMON_TOTAL_COST' | translate}} [zł]</span>
+            <input type="number" class="form-control" min="0" step="50" data-number-to-fixed="2" data-number-stepfactor="100" class="currency" ng-model="generalCost.total_cost">
+        </div>
+        <br>
+        <button class="btn button-default pull-right" ng-click="saveCost()">{{'BUTTON_SAVE' | translate}}</button>
+    </div>
 </div>

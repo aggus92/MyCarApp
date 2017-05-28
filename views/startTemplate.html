@@ -1,3 +1,25 @@
-<h2 class="header-h2">{{$root.currentCar.model}}</h3>
+<h3 class="header-h2">{{$root.currentCar.model}}</h3>
 <div>
+    <uib-accordion>
+        <div uib-accordion-group class="panel-default" is-open="p1.open">
+            <uib-accordion-heading>
+                <div>
+                    {{'ACCORDION_SHOW_REGISTRATION' | translate}} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': p1.open, 'glyphicon-chevron-right': !p1.open}"></i>
+                </div>
+            </uib-accordion-heading>
+            <div class="col-md-12">
+
+            </div>
+        </div>
+        <div uib-accordion-group class="panel-default" is-open="p2.open">
+            <uib-accordion-heading>
+                <div>
+                    {{'ACCORDION_SHOW_TECH_REVIEW' | translate}} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': p2.open, 'glyphicon-chevron-right': !p2.open}"></i>
+                </div>
+            </uib-accordion-heading>
+            <div class="col-md-12">
+
+            </div>
+        </div>
+    </uib-accordion>
 </div>

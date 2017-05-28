@@ -34,8 +34,8 @@ mycarapp.controller('CostsCtrl', ['$scope', '$rootScope', '$translate', '$state'
                 }
             }).then(function (response) {
                 console.log(response);
-                if (response.data.records.length > 0) {
-                    $scope.userCars = response.data.records;
+                if (response.data.records != undefined && response.data.records.length > 0) {
+                    $scope.costsList = response.data.records;
                 }
             });
         } else {
@@ -48,14 +48,14 @@ mycarapp.controller('CostsCtrl', ['$scope', '$rootScope', '$translate', '$state'
                 }
             }).then(function (response) {
                 console.log(response);
-                if (response.data.records.length > 0) {
-                    $scope.userCars = response.data.records;
+                if (response.data.records != undefined && response.data.records.length > 0) {
+                    $scope.costsList = response.data.records;
                 }
             });
         }
     };
 
-    //$scope.search();
+    $scope.search();
 	
 	$scope.addCost = function() {
 		$state.go('costs.add');

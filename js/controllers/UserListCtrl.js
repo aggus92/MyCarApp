@@ -3,7 +3,7 @@
  */
 'use strict';
 
-mycarapp.controller('UserListCtrl', ['$scope', '$rootScope', '$http', function($scope, $rootScope, $http) {
+mycarapp.controller('UserListCtrl', ['$scope', '$rootScope', '$http', 'growl', function($scope, $rootScope, $http, growl) {
 	$scope.user = $rootScope.globals.currentUser;
 	
 	$scope.save = function() {
@@ -14,6 +14,9 @@ mycarapp.controller('UserListCtrl', ['$scope', '$rootScope', '$http', function($
 				lastName: $scope.user.lastName
 			}
 		}).then(function (response) {
+            if (response.status === 200) {
+                growl.addSuccessMessage("NOTIFICATION_UPDATE");
+            }
 		});
 	}
 }]);

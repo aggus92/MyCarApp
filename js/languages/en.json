@@ -34,6 +34,9 @@
 	"COMMON_COST_TECH_REVIEW"						  : "Tech review",
 	"COMMON_COST_REGISTRATION"						  : "Registration",
 	"COMMON_COST_GENERAL"						      : "General",
+	"COMMON_DATE"						      		  : "Date",
+	"COMMON_TYPE"						      		  : "Type",
+	"COMMON_TOTAL_COST"						      	  : "Total cost",
 	"BUTTON_CHANGE"                                   : "Change",
 	"BUTTON_EDIT"                                     : "Edit",
 	"BUTTON_LOGIN"								      : "Sign in",
@@ -46,9 +49,15 @@
 	"MENU_ITEM_USER"							      : "User",
 	"MENU_ITEM_CARS"							      : "Cars",
 	"MENU_ITEM_ADD_NEW_CAR"							  : "Add new car",
+	"MENU_ITEM_ADD_NEW_COST"						  : "Add new cost",
 	"MENU_ITEM_EDIT_CAR"							  : "Edit car",
 	"TABLE_HEADER_CAR_MODEL"						  : "Model",
 	"TABLE_HEADER_CAR_YEAR"						  	  : "Year",
 	"TABLE_HEADER_CAR_COLOR"						  : "Color",
-	"NOTIFICATION_ADD_NEW_USER"						  : "Added new user"
+	"NOTIFICATION_ADD_NEW_USER"						  : "Added new user",
+	"NOTIFICATION_ADD_NEW_COST"						  : "Added new cost",
+	"NOTIFICATION_ADD_NEW_CAR"						  : "Added new car",
+	"NOTIFICATION_UPDATE"							  : "Changes have been saved",
+	"ACCORDION_SHOW_REGISTRATION"					  : "Show registration",
+	"ACCORDION_SHOW_TECH_REVIEW"					  : "Show tech review"
 }

@@ -1,6 +1,6 @@
 'use strict';
 
-mycarapp.controller('AddCarCtrl', ['$scope', '$rootScope', '$translate', '$stateParams', '$http', function($scope, $rootScope, $translate, $stateParams, $http) {
+mycarapp.controller('AddCarCtrl', ['$scope', '$rootScope', '$translate', '$stateParams', '$http', 'growl', function($scope, $rootScope, $translate, $stateParams, $http, growl) {
 	
 	$scope.isDefault = $stateParams.isFirstCar;
 	
@@ -10,6 +10,9 @@ mycarapp.controller('AddCarCtrl', ['$scope', '$rootScope', '$translate', '$state
 		console.log($scope.car);
 		$http.post("ajax/addCar.php", $scope.car).then(function (response) {
 			console.log(response);
+            if (response.status === 200) {
+                growl.addSuccessMessage("NOTIFICATION_ADD_NEW_CAR");
+            }
         });
     }
 }]);

@@ -34,6 +34,9 @@
 	"COMMON_COST_TECH_REVIEW"						  : "Przegląd techniczny",
 	"COMMON_COST_REGISTRATION"						  : "Ubezpieczenie",
 	"COMMON_COST_GENERAL"						      : "Ogólne",
+	"COMMON_DATE"						      		  : "Data",
+	"COMMON_TYPE"						      		  : "Typ",
+	"COMMON_TOTAL_COST"						      	  : "Koszt",
 	"BUTTON_CHANGE"                                   : "Zmień",
 	"BUTTON_EDIT"                                     : "Edytuj",
 	"BUTTON_LOGIN"							     	  : "Zaloguj się",
@@ -46,9 +49,15 @@
 	"MENU_ITEM_USER"							      : "Użytkownik",
 	"MENU_ITEM_CARS"							      : "Samochody",
 	"MENU_ITEM_ADD_NEW_CAR"							  : "Dodaj nowy samochód",
+	"MENU_ITEM_ADD_NEW_COST"						  : "Dodaj nowy koszt",
 	"MENU_ITEM_EDIT_CAR"							  : "Edytuj samochód",
 	"TABLE_HEADER_CAR_MODEL"						  : "Model",
 	"TABLE_HEADER_CAR_YEAR"						  	  : "Rok",
 	"TABLE_HEADER_CAR_COLOR"						  : "Kolor",
-	"NOTIFICATION_ADD_NEW_USER"						  : "Dodano nowego użytkownika"
+	"NOTIFICATION_ADD_NEW_USER"						  : "Dodano nowego użytkownika",
+	"NOTIFICATION_ADD_NEW_COST"						  : "Dodano nowy koszt",
+	"NOTIFICATION_ADD_NEW_CAR"						  : "Dodano nowy samochód",
+	"NOTIFICATION_UPDATE"							  : "Zmiany zostały zapisane",
+	"ACCORDION_SHOW_REGISTRATION"					  : "Pokaż ubezpieczenie",
+	"ACCORDION_SHOW_TECH_REVIEW"					  : "Pokaż przegląd techniczny"
 }

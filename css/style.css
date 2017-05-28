@@ -144,9 +144,22 @@ body {
     color: #ffffff;
 }
 
+.margin-top-20 {
+    margin-top: 20px;
+}
+
+.accordion-toggle {
+    text-decoration: none;
+}
+
 .header-h2 {
     margin: 20px 0;
     font-size: 28px;
     color: #6c6c6c;
     text-transform: uppercase;
+}
+
+.panel-default {
+    background-color: rgba(0,0,0,.15);
+    color: #ffffff;
 }

@@ -12,7 +12,7 @@ mycarapp.controller('CostsCtrl', ['$scope', '$rootScope', '$translate', '$state'
     dateStart.setDate(dateEnd.getDate() - 7);
 	
 	$scope.dates = {
-        objectType: {type: 'COMMON_COST_PETROL', value: 'PETROL'},
+        objectType: {type: 'COMMON_COST_GENERAL', value: 'GENERAL'},
         endDate: new Date(dateEnd),
         startDate: dateStart
     };
@@ -20,24 +20,16 @@ mycarapp.controller('CostsCtrl', ['$scope', '$rootScope', '$translate', '$state'
 	$scope.objectTypes = [
         {type:'COMMON_COST_PETROL', value: 'PETROL'},
         {type:'COMMON_COST_OPERATING', value: 'OPERATING'},
-        {type:'COMMON_COST_TECH_REVIEW', value: 'TECH'},
+        {type:'COMMON_COST_TECH_REVIEW', value: 'TECHREVIEW'},
         {type:'COMMON_COST_REGISTRATION', value: 'REGISTRATION'},
         {type:'COMMON_COST_GENERAL', value: 'GENERAL'}
     ];
 
     $scope.search = function() {
-        if ($scope.dates.objectType.value === 'GENERAL') {
-            $http.get('ajax/getGeneralCosts.php', {
-                params: {
-                    carId: $rootScope.currentCar.id,
-					startDate: $scope.dates.startDate,
-					endDate: $scope.dates.endDate
-                }
-            }).then(function (response) {
-                if (response.data.records != undefined && response.data.records.length > 0) {
-                    $scope.costsList = response.data.records;
-                }
-            });
+        if ($scope.dates.objectType.value === 'PETROL') {
+
+        } else if ($scope.dates.objectType.value === 'REGISTRATION') {
+
         } else {
             $http.get('ajax/getCosts.php', {
                 params: {
@@ -47,7 +39,6 @@ mycarapp.controller('CostsCtrl', ['$scope', '$rootScope', '$translate', '$state'
                     endDate: $scope.dates.endDate
                 }
             }).then(function (response) {
-                console.log(response);
                 if (response.data.records != undefined && response.data.records.length > 0) {
                     $scope.costsList = response.data.records;
                 }
@@ -55,7 +46,7 @@ mycarapp.controller('CostsCtrl', ['$scope', '$rootScope', '$translate', '$state'
         }
     };
 
-    $scope.search();
+    //$scope.search();
 	
 	$scope.addCost = function() {
 		$state.go('costs.add');

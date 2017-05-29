@@ -11,23 +11,19 @@
                 <div class="input-group">
                     <p class="input-group">
                         <span class="input-group-addon">{{'COMMON_DATE' | translate}}</span>
-                        <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="registration.registration_date" is-open="state.open" datepicker-options="dateOptions" ng-required="true" close-text="Close" show-button-bar="false"/>
-                        <span class="input-group-btn">
-                    <button type="button" class="btn button-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
-                </span>
+                        <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="registration.registration_date" is-open="state.open" datepicker-options="dateOptions" ng-required="true" close-text="Close" show-button-bar="false" ng-disabled="true"/>
                     </p>
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon">{{'COMMON_ODOMETER' | translate}}</span>
-                    <input type="number" class="form-control" min="0" step="50" data-number-to-fixed="2" data-number-stepfactor="100" class="currency" ng-model="registration.registration_odometer">
+                    <input type="number" class="form-control" min="0" step="50" data-number-to-fixed="2" data-number-stepfactor="100" class="currency" ng-model="registration.registration_odometer" ng-disabled="true">
                 </div>
                 <br>
                 <div class="input-group">
                     <span class="input-group-addon">{{'COMMON_PLATE' | translate}}</span>
-                    <input type="text" class="form-control" maxlength="200" ng-model="registration.plate_no">
+                    <input type="text" class="form-control" maxlength="200" ng-model="registration.plate_no" ng-disabled="true">
                 </div>
                 <br>
-                <button class="btn button-default pull-right" ng-click="saveRegistration()">{{'BUTTON_SAVE' | translate}}</button>
             </div>
         </div>
         <div uib-accordion-group class="panel-default" is-open="p2.open">

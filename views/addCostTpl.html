@@ -1,42 +1,70 @@
 <h2 class="header-h2"> {{'MENU_ITEM_ADD_NEW_COST' | translate}}</h2>
 <div class="row">
     <div class="col-md-12">
-        <div class="col-md-6" ng-init="costTypes = 'operatingCost'">
-            <div class="radio radio-primary">
-                <input type="radio" id="operatingCost" value="operatingCosts" ng-model="costTypes">
-                <label for="operatingCost">{{'COMMON_OPERATING_COSTS' | translate}}</label>
-            </div>
-            <div class="radio radio-primary">
-                <input type="radio" id="generalCost" value="generalCosts" ng-model="costTypes">
-                <label for="generalCost">{{'COMMON_GENERAL_COSTS' | translate}}</label>
-            </div>
+        <div class="col-sm-3" style="padding-left: 0;">
+            <label>{{'COMMON_COST_TYPE' | translate}}</label>
+            <ui-select ng-model="type.costType">
+                <ui-select-match>
+                    {{$select.selected.type | translate}}
+                </ui-select-match>
+                <ui-select-choices repeat="item in objectTypes">
+                    <span>{{item.type | translate}}</span>
+                </ui-select-choices>
+            </ui-select>
         </div>
     </div>
 </div>
-<div class="row" ng-if="costTypes == 'operatingCosts'">
-    operatingCost
-</div>
-<div class="row" ng-if="costTypes == 'generalCosts'">
+<br>
+<div class="row" ng-if="type.costType.value == 'GENERAL' || type.costType.value == 'TECHREVIEW' || type.costType.value == 'OPERATING'">
     <div class="col-md-12">
         <div class="input-group">
             <p class="input-group">
                 <span class="input-group-addon">{{'COMMON_DATE' | translate}}</span>
-                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="generalCost.date" is-open="state.open" datepicker-options="dateOptions" ng-required="true" close-text="Close" show-button-bar="false"/>
+                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="operatingCost.date" is-open="state.open" datepicker-options="dateOptions" ng-required="true" close-text="Close" show-button-bar="false"/>
                 <span class="input-group-btn">
                     <button type="button" class="btn button-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
                 </span>
             </p>
         </div>
         <div class="input-group">
-            <span class="input-group-addon">{{'COMMON_TYPE' | translate}}</span>
-            <input type="text" class="form-control" maxlength="200" ng-model="generalCost.type">
+            <span class="input-group-addon">{{'COMMON_ODOMETER' | translate}}</span>
+            <input type="number" class="form-control" min="1" step="1000" class="currency" ng-model="operatingCost.odometer">
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-addon">{{'COMMON_DESCRIPTION' | translate}}</span>
+            <input type="text" class="form-control" maxlength="200" ng-model="operatingCost.description">
         </div>
         <br>
         <div class="input-group">
             <span class="input-group-addon">{{'COMMON_TOTAL_COST' | translate}} [zł]</span>
-            <input type="number" class="form-control" min="0" step="50" data-number-to-fixed="2" data-number-stepfactor="100" class="currency" ng-model="generalCost.total_cost">
+            <input type="number" class="form-control" min="1" step="50" ng-model="operatingCost.total_cost">
         </div>
         <br>
-        <button class="btn button-default pull-right" ng-click="saveCost()">{{'BUTTON_SAVE' | translate}}</button>
+        <button class="btn button-default pull-right" ng-click="saveOperatingCost()">{{'BUTTON_SAVE' | translate}}</button>
+    </div>
+</div>
+<div class="row" ng-if="type.costType.value == 'REGISTRATION'">
+    <div class="col-md-12">
+        <div class="input-group">
+            <p class="input-group">
+                <span class="input-group-addon">{{'COMMON_DATE' | translate}}</span>
+                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="registration.registration_date" is-open="state.open" datepicker-options="dateOptions" ng-required="true" close-text="Close" show-button-bar="false"/>
+                <span class="input-group-btn">
+                    <button type="button" class="btn button-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </p>
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon">{{'COMMON_ODOMETER' | translate}}</span>
+            <input type="number" class="form-control" min="1" step="1000" ng-model="registration.registration_odometer">
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-addon">{{'COMMON_PLATE' | translate}}</span>
+            <input type="text" class="form-control" maxlength="200" ng-model="registration.plate_no">
+        </div>
+        <br>
+        <button class="btn button-default pull-right" ng-click="saveRegistration()">{{'BUTTON_SAVE' | translate}}</button>
     </div>
 </div>

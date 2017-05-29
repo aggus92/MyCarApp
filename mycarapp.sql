@@ -51,16 +51,6 @@ CREATE TABLE IF NOT EXISTS `registration` (
   FOREIGN KEY(car_id) REFERENCES car(id)
 );
 
-CREATE TABLE IF NOT EXISTS `costs` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `car_id` INT NOT NULL,
-  `date` DATE NOT NULL,
-  `type` VARCHAR(200) NOT NULL,
-  `total_cost` DOUBLE NOT NULL,
-  PRIMARY KEY (`id`),
-  FOREIGN KEY(car_id) REFERENCES car(id)
-);
-
 CREATE TABLE IF NOT EXISTS `cost_type` (
   `type` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`type`)
@@ -73,6 +63,7 @@ CREATE TABLE IF NOT EXISTS `operating_costs` (
   `date` DATE NOT NULL,
   `odometer` INT NOT NULL,
   `description` VARCHAR(200),
+  `total_cost` DOUBLE NOT NULL,
   PRIMARY KEY (`id`),
   FOREIGN KEY(car_id) REFERENCES car(id),
   FOREIGN KEY (cost_type) REFERENCES cost_type(type)

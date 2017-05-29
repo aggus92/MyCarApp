@@ -45,17 +45,35 @@
         </div>
     </div>
 </div>
-<div class="row">
+<div class="row" ng-if="dates.objectType.value == 'GENERAL' || dates.objectType.value == 'TECHREVIEW' || dates.objectType.value == 'OPERATING'">
 	<div class="col-md-12">
 		<table class="table">
 			<thead>
 			  <tr>
-				
+                  <th>{{'TABLE_HEADER_DATE' | translate}}</th>
+                  <th>{{'TABLE_HEADER_ODOMETER' | translate}}</th>
+                  <th>{{'TABLE_HEADER_DESCRIPTION' | translate}}</th>
+                  <th>{{'TABLE_HEADER_COST' | translate}}</th>
+                  <th>&nbsp;</th>
 			  </tr>
 			</thead>
 			<tbody>
 			  <tr ng-repeat="cost in costsList track by $index">
-				
+                  <td>
+                      {{cost.date}}
+                  </td>
+                  <td>
+                      {{cost.odometer}}
+                  </td>
+                  <td>
+                      {{cost.description}}
+                  </td>
+                  <td>
+                      {{cost.total_cost}}
+                  </td>
+                  <td class="text-right">
+
+                  </td>
 			  </tr>
 			</tbody>
 	  </table>

@@ -15,12 +15,12 @@
     </div>
 </div>
 <br>
-<div class="row" ng-if="type.costType.value == 'GENERAL' || type.costType.value == 'TECHREVIEW' || type.costType.value == 'OPERATING'">
+<div class="row" ng-if="type.costType.value != 'PETROL'">
     <div class="col-md-12">
         <div class="input-group">
             <p class="input-group">
                 <span class="input-group-addon">{{'COMMON_DATE' | translate}}</span>
-                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="operatingCost.date" is-open="state.open" datepicker-options="dateOptions" ng-required="true" close-text="Close" show-button-bar="false"/>
+                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="cost.date" is-open="state.open" datepicker-options="dateOptions" ng-required="true" close-text="Close" show-button-bar="false"/>
                 <span class="input-group-btn">
                     <button type="button" class="btn button-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
                 </span>
@@ -28,22 +28,19 @@
         </div>
         <div class="input-group">
             <span class="input-group-addon">{{'COMMON_ODOMETER' | translate}}</span>
-            <input type="number" class="form-control" min="1" step="1000" class="currency" ng-model="operatingCost.odometer">
+            <input type="number" class="form-control" min="1" step="1000" class="currency" ng-model="cost.odometer">
         </div>
         <br>
         <div class="input-group">
             <span class="input-group-addon">{{'COMMON_DESCRIPTION' | translate}}</span>
-            <input type="text" class="form-control" maxlength="200" ng-model="operatingCost.description">
+            <input type="text" class="form-control" maxlength="200" ng-model="cost.description">
         </div>
         <br>
         <div class="input-group">
             <span class="input-group-addon">{{'COMMON_TOTAL_COST' | translate}} [zł]</span>
-            <input type="number" class="form-control" min="1" step="50" ng-model="operatingCost.total_cost">
+            <input type="number" class="form-control" min="1" step="50" ng-model="cost.total_cost">
         </div>
         <br>
-        <button class="btn button-default pull-right" ng-click="saveOperatingCost()">{{'BUTTON_SAVE' | translate}}</button>
+        <button class="btn button-default pull-right" ng-click="saveCost()">{{'BUTTON_SAVE' | translate}}</button>
     </div>
-</div>
-<div class="row" ng-if="type.costType.value == 'INSURANCE'">
-
 </div>

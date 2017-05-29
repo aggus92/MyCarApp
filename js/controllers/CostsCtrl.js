@@ -28,8 +28,6 @@ mycarapp.controller('CostsCtrl', ['$scope', '$rootScope', '$translate', '$state'
     $scope.search = function() {
         if ($scope.dates.objectType.value === 'PETROL') {
 
-        } else if ($scope.dates.objectType.value === 'INSURANCE') {
-
         } else {
             $http.get('ajax/getCosts.php', {
                 params: {

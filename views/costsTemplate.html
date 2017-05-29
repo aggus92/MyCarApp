@@ -45,7 +45,7 @@
         </div>
     </div>
 </div>
-<div class="row" ng-if="dates.objectType.value == 'GENERAL' || dates.objectType.value == 'TECHREVIEW' || dates.objectType.value == 'OPERATING'">
+<div class="row" ng-if="dates.objectType.value != 'PETROL'">
 	<div class="col-md-12">
 		<table class="table">
 			<thead>
@@ -78,9 +78,4 @@
 			</tbody>
 	  </table>
 	</div>
-</div>
-<div class="row" ng-if="dates.objectType.value == 'INSURANCE'">
-    <div class="col-md-12">
-
-    </div>
 </div>

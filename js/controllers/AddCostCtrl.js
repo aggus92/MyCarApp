@@ -5,7 +5,7 @@
 
 mycarapp.controller('AddCostCtrl', ['$scope', '$rootScope', '$translate', '$state', '$stateParams', '$http', 'growl', function($scope, $rootScope, $translate, $state, $stateParams, $http, growl) {
 
-	$scope.operatingCost = {
+	$scope.cost = {
         odometer: 1,
         total_cost: 1
     };
@@ -22,10 +22,10 @@ mycarapp.controller('AddCostCtrl', ['$scope', '$rootScope', '$translate', '$stat
         costType: {type: 'COMMON_COST_GENERAL', value: 'GENERAL'}
     };
 	
-	$scope.saveOperatingCost = function() {
-        $scope.operatingCost.car_id = $rootScope.currentCar.id;
-        $scope.operatingCost.type = $scope.type.costType.value;
-        $http.post("ajax/addCost.php", $scope.operatingCost).then(function (response) {
+	$scope.saveCost = function() {
+        $scope.cost.car_id = $rootScope.currentCar.id;
+        $scope.cost.type = $scope.type.costType.value;
+        $http.post("ajax/addCost.php", $scope.cost).then(function (response) {
             console.log(response);
             if (response.status === 200) {
                 growl.addSuccessMessage("NOTIFICATION_ADD_NEW_COST");

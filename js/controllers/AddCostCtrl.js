@@ -5,6 +5,8 @@
 
 mycarapp.controller('AddCostCtrl', ['$scope', '$rootScope', '$translate', '$state', '$stateParams', '$http', 'growl', function($scope, $rootScope, $translate, $state, $stateParams, $http, growl) {
 
+	$scope.generalCost = {};
+	
 	$scope.saveCost = function() {
 		if ($scope.costTypes === 'operatingCosts') {
             $http.post("ajax/addCost.php").then(function (response) {
@@ -14,6 +16,7 @@ mycarapp.controller('AddCostCtrl', ['$scope', '$rootScope', '$translate', '$stat
                 }
             });
 		} else {
+			console.log($scope.generalCost);
 		    $scope.generalCost.car_id = $rootScope.currentCar.id;
             $http.post("ajax/addGeneralCost.php", $scope.generalCost).then(function (response) {
                 console.log(response);

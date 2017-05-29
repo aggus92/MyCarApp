@@ -37,6 +37,8 @@
 	"COMMON_DATE"						      		  : "Date",
 	"COMMON_TYPE"						      		  : "Type",
 	"COMMON_TOTAL_COST"						      	  : "Total cost",
+	"COMMON_ODOMETER"						      	  : "Odometer",
+	"COMMON_PLATE"						      		  : "Plate number",
 	"BUTTON_CHANGE"                                   : "Change",
 	"BUTTON_EDIT"                                     : "Edit",
 	"BUTTON_LOGIN"								      : "Sign in",

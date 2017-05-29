@@ -37,6 +37,8 @@
 	"COMMON_DATE"						      		  : "Data",
 	"COMMON_TYPE"						      		  : "Typ",
 	"COMMON_TOTAL_COST"						      	  : "Koszt",
+	"COMMON_ODOMETER"						      	  : "Licznik",
+	"COMMON_PLATE"						      		  : "Numer tablic rejestracyjnych",
 	"BUTTON_CHANGE"                                   : "Zmień",
 	"BUTTON_EDIT"                                     : "Edytuj",
 	"BUTTON_LOGIN"							     	  : "Zaloguj się",

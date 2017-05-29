@@ -11,7 +11,7 @@ $model = $_GET["model"];
 $year = $_GET["year"];
 $color = $_GET["color"];
 
-$result = $conn->query("UPDATE car SET is_default = '$is_default', model = '$model', year = '$year', color = '$color' WHERE id = $id");
+$result = $conn->query("UPDATE car SET is_default = '$is_default', model = '$model', year = '$year', color = '$color' WHERE id = '$id'");
 $conn->close();
 
 echo json_encode($result);

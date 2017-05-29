@@ -44,27 +44,6 @@
         <button class="btn button-default pull-right" ng-click="saveOperatingCost()">{{'BUTTON_SAVE' | translate}}</button>
     </div>
 </div>
-<div class="row" ng-if="type.costType.value == 'REGISTRATION'">
-    <div class="col-md-12">
-        <div class="input-group">
-            <p class="input-group">
-                <span class="input-group-addon">{{'COMMON_DATE' | translate}}</span>
-                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="registration.registration_date" is-open="state.open" datepicker-options="dateOptions" ng-required="true" close-text="Close" show-button-bar="false"/>
-                <span class="input-group-btn">
-                    <button type="button" class="btn button-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
-                </span>
-            </p>
-        </div>
-        <div class="input-group">
-            <span class="input-group-addon">{{'COMMON_ODOMETER' | translate}}</span>
-            <input type="number" class="form-control" min="1" step="1000" ng-model="registration.registration_odometer">
-        </div>
-        <br>
-        <div class="input-group">
-            <span class="input-group-addon">{{'COMMON_PLATE' | translate}}</span>
-            <input type="text" class="form-control" maxlength="200" ng-model="registration.plate_no">
-        </div>
-        <br>
-        <button class="btn button-default pull-right" ng-click="saveRegistration()">{{'BUTTON_SAVE' | translate}}</button>
-    </div>
+<div class="row" ng-if="type.costType.value == 'INSURANCE'">
+
 </div>

@@ -17,7 +17,7 @@ mycarapp.controller('StartCtrl', ['$scope', '$rootScope', '$translate', '$http',
         }).then(function (response) {
             console.log(response);
             if (response.data.records != undefined && response.data.records.length > 0) {
-                $scope.registration = response.data.records;
+                $scope.registration = response.data.records[0];
                 $scope.isRegistration = true;
             }
         });
@@ -38,4 +38,30 @@ mycarapp.controller('StartCtrl', ['$scope', '$rootScope', '$translate', '$http',
     };
     $scope.getTechReview();
 
+    $scope.saveRegistration = function() {
+        if ($scope.isRegistration) {
+            $http.get('ajax/updateRegistration.php', {
+                params: {
+                    carId: $rootScope.currentCar.id,
+                    registration_date: $scope.registration.registration_date,
+                    registration_odometer: $scope.registration.registration_odometer,
+                    plate_no: $scope.registration.plate_no
+                }
+            }).then(function (response) {
+                $scope.afterSaveRegistration(response);
+            });
+        } else {
+            $scope.registration.car_id = $rootScope.currentCar.id;
+            $http.get('ajax/addRegistration.php', $scope.registration).then(function (response) {
+                $scope.afterSaveRegistration(response);
+            });
+        }
+    };
+
+    $scope.afterSaveRegistration = function (response) {
+        if (response.status === 200) {
+            growl.addSuccessMessage("NOTIFICATION_UPDATE");
+            $scope.getRegistration();
+        }
+    };
 }]);

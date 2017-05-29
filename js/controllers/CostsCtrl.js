@@ -21,14 +21,14 @@ mycarapp.controller('CostsCtrl', ['$scope', '$rootScope', '$translate', '$state'
         {type:'COMMON_COST_PETROL', value: 'PETROL'},
         {type:'COMMON_COST_OPERATING', value: 'OPERATING'},
         {type:'COMMON_COST_TECH_REVIEW', value: 'TECHREVIEW'},
-        {type:'COMMON_COST_REGISTRATION', value: 'REGISTRATION'},
+        {type:'COMMON_COST_INSURANCE', value: 'INSURANCE'},
         {type:'COMMON_COST_GENERAL', value: 'GENERAL'}
     ];
 
     $scope.search = function() {
         if ($scope.dates.objectType.value === 'PETROL') {
 
-        } else if ($scope.dates.objectType.value === 'REGISTRATION') {
+        } else if ($scope.dates.objectType.value === 'INSURANCE') {
 
         } else {
             $http.get('ajax/getCosts.php', {

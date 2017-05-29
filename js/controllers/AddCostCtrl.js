@@ -5,7 +5,6 @@
 
 mycarapp.controller('AddCostCtrl', ['$scope', '$rootScope', '$translate', '$state', '$stateParams', '$http', 'growl', function($scope, $rootScope, $translate, $state, $stateParams, $http, growl) {
 
-    $scope.registration = {};
 	$scope.operatingCost = {
         odometer: 1,
         total_cost: 1
@@ -15,7 +14,7 @@ mycarapp.controller('AddCostCtrl', ['$scope', '$rootScope', '$translate', '$stat
         {type:'COMMON_COST_PETROL', value: 'PETROL'},
         {type:'COMMON_COST_OPERATING', value: 'OPERATING'},
         {type:'COMMON_COST_TECH_REVIEW', value: 'TECHREVIEW'},
-        {type:'COMMON_COST_REGISTRATION', value: 'REGISTRATION'},
+        {type:'COMMON_COST_INSURANCE', value: 'INSURANCE'},
         {type:'COMMON_COST_GENERAL', value: 'GENERAL'}
     ];
 
@@ -33,15 +32,6 @@ mycarapp.controller('AddCostCtrl', ['$scope', '$rootScope', '$translate', '$stat
             }
         });
 	};
-
-	$scope.saveRegistration = function() {
-        $scope.registration.car_id = $rootScope.currentCar.id;
-        $http.get('ajax/addRegistration.php', $scope.registration).then(function (response) {
-            if (response.status === 200) {
-                growl.addSuccessMessage("NOTIFICATION_UPDATE");
-            }
-        });
-    };
 
     $scope.open = function() {
         $scope.state = {

@@ -15,7 +15,7 @@ $type = $_GET["type"];
 $startDate = $_GET["startDate"];
 $endDate = $_GET["endDate"];
 
-$result = $conn->query("SELECT * FROM operating_costs WHERE car_id = '$carId' AND cost_type = '$type' AND date BETWEEN '$startDate' AND '$endDate'");
+$result = $conn->query("SELECT * FROM operating_costs WHERE car_id = '$carId' AND cost_type = '$type' AND date BETWEEN '$startDate' AND '$endDate' ORDER BY date DESC");
 
 $outp = "";
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {

@@ -14,7 +14,7 @@
 <body>
 <div growl></div>
     <div class="container">
-        <div class="masthead">
+        <div class="masthead" ng-if="$root.globals.currentUser">
             <h3 class="text-muted">My Car App</h3>
             <nav ng-controller="HeaderCtrl">
                 <div ng-include="'views/menuTpl.html'"></div>

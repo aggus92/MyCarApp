@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by IntelliJ IDEA.
- * User: aggus
+ * User: Agnieszka Sobocińska
  * Date: 29.05.2017
  * Time: 16:51
  */

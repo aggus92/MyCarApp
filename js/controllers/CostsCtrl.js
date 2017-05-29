@@ -26,7 +26,6 @@ mycarapp.controller('CostsCtrl', ['$scope', '$rootScope', '$translate', '$state'
     ];
 
     $scope.search = function() {
-        console.log($scope.dates);
         if ($scope.dates.objectType.value === 'GENERAL') {
             $http.get('ajax/getGeneralCosts.php', {
                 params: {
@@ -35,7 +34,6 @@ mycarapp.controller('CostsCtrl', ['$scope', '$rootScope', '$translate', '$state'
 					endDate: $scope.dates.endDate
                 }
             }).then(function (response) {
-                console.log(response);
                 if (response.data.records != undefined && response.data.records.length > 0) {
                     $scope.costsList = response.data.records;
                 }

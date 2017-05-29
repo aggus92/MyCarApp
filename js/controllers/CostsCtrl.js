@@ -44,7 +44,7 @@ mycarapp.controller('CostsCtrl', ['$scope', '$rootScope', '$translate', '$state'
         }
     };
 
-    //$scope.search();
+    $scope.search();
 	
 	$scope.addCost = function() {
 		$state.go('costs.add');

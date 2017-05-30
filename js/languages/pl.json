@@ -65,6 +65,7 @@
 	"NOTIFICATION_ADD_NEW_USER"						  : "Dodano nowego użytkownika",
 	"NOTIFICATION_ADD_NEW_COST"						  : "Dodano nowy koszt",
 	"NOTIFICATION_ADD_NEW_CAR"						  : "Dodano nowy samochód",
+	"NOTIFICATION_SWITCH_CAR"						  : "Samochód zmieniony",
 	"NOTIFICATION_UPDATE"							  : "Zmiany zostały zapisane",
 	"ACCORDION_SHOW_REGISTRATION"					  : "Pokaż ubezpieczenie",
 	"ACCORDION_SHOW_TECH_REVIEW"					  : "Pokaż przegląd techniczny"

@@ -10,31 +10,35 @@ mycarapp.controller('StartCtrl', ['$scope', '$rootScope', '$translate', '$http',
     $scope.isRegistration = false;
 
     $scope.getRegistration = function () {
-        $http.get('ajax/getRegistration.php', {
-            params: {
-                carId: $rootScope.currentCar.id
-            }
-        }).then(function (response) {
-            console.log(response);
-            if (response.data.records != undefined && response.data.records.length > 0) {
-                $scope.registration = response.data.records[0];
-                $scope.isRegistration = true;
-            }
-        });
+        if ($rootScope.currentCar.id != null) {
+            $http.get('ajax/getRegistration.php', {
+                params: {
+                    carId: $rootScope.currentCar.id
+                }
+            }).then(function (response) {
+                console.log(response);
+                if (response.data.records != undefined && response.data.records.length > 0) {
+                    $scope.registration = response.data.records[0];
+                    $scope.isRegistration = true;
+                }
+            });
+        }
     };
     $scope.getRegistration();
 
     $scope.getTechReview = function () {
-        $http.get('ajax/getTechReview.php', {
-            params: {
-                carId: $rootScope.currentCar.id
-            }
-        }).then(function (response) {
-            console.log(response);
-            if (response.data.records != undefined && response.data.records.length > 0) {
-                $scope.techReview = response.data.records;
-            }
-        });
+        if ($rootScope.currentCar.id != null) {
+            $http.get('ajax/getTechReview.php', {
+                params: {
+                    carId: $rootScope.currentCar.id
+                }
+            }).then(function (response) {
+                console.log(response);
+                if (response.data.records != undefined && response.data.records.length > 0) {
+                    $scope.techReview = response.data.records;
+                }
+            });
+        }
     };
     $scope.getTechReview();
 
@@ -48,6 +52,7 @@ mycarapp.controller('StartCtrl', ['$scope', '$rootScope', '$translate', '$http',
                     plate_no: $scope.registration.plate_no
                 }
             }).then(function (response) {
+                console.log(response);
                 $scope.afterSaveRegistration(response);
             });
         } else {

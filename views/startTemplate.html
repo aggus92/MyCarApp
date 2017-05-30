@@ -1,4 +1,4 @@
-<h3 class="header-h2">{{$root.currentCar.model}}</h3>
+<h3 class="header-h2" ng-if="$root.currentCar != null">{{$root.currentCar.model}}</h3>
 <div>
     <uib-accordion>
         <div uib-accordion-group class="panel-default" is-open="p1.open">
@@ -27,7 +27,7 @@
                     <input type="text" class="form-control" maxlength="200" ng-model="registration.plate_no">
                 </div>
                 <br>
-                <button class="btn button-default pull-right" ng-click="saveRegistration()">{{'BUTTON_SAVE' | translate}}</button>
+                <button class="btn button-default pull-right" ng-click="saveRegistration()" ng-disabled="$root.currentCar == null">{{'BUTTON_SAVE' | translate}}</button>
             </div>
         </div>
         <div uib-accordion-group class="panel-default" is-open="p2.open">

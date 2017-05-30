@@ -24,6 +24,7 @@ mycarapp.controller('CarListCtrl', ['$scope', '$rootScope', '$translate', '$stat
 	
 	$scope.switchCar = function(car) {
 		$rootScope.currentCar = car;
+        growl.addSuccessMessage("NOTIFICATION_SWITCH_CAR");
 	};
 	
 	$scope.addNewCar = function() {

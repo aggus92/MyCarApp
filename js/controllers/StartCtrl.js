@@ -69,4 +69,21 @@ mycarapp.controller('StartCtrl', ['$scope', '$rootScope', '$translate', '$http',
             $scope.getRegistration();
         }
     };
+
+    $scope.open = function() {
+        $scope.state = {
+            open: true
+        };
+    };
+
+    $scope.dateOptions = {
+        formatYear: 'yyyy',
+        startingDay: 1
+    };
+
+    $scope.state = {
+        open: false
+    };
+
+    $scope.format = 'dd-MM-yyyy';
 }]);

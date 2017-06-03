@@ -17,11 +17,11 @@ $result = $conn->query("SELECT * FROM registration where car_id = '$carId'");
 $outp = "";
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     if ($outp != "") {$outp .= ",";}
-    $outp .= '{"id":"'                    . $rs["id"]                     . '",';
-    $outp .= '"car_id":"'                 . $rs["car_id"]                 . '",';
-    $outp .= '"registration_date":"'      . $rs["registration_date"]      . '",';
-    $outp .= '"registration_odometer":"'  . $rs["registration_odometer"]  . '",';
-    $outp .= '"plate_no":"'               . $rs["plate_no"]               . '"}';
+    $outp .= '{"id":"'                    . $rs["id"]                            . '",';
+    $outp .= '"car_id":"'                 . $rs["car_id"]                        . '",';
+    $outp .= '"registration_date":"'      . $rs["registration_date"]             . '",';
+    $outp .= '"registration_odometer":"'  . intval($rs["registration_odometer"]) . '",';
+    $outp .= '"plate_no":"'               . $rs["plate_no"]                      . '"}';
 }
 $outp ='{"records":['.$outp.']}';
 $conn->close();

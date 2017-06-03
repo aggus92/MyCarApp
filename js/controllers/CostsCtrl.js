@@ -29,6 +29,7 @@ mycarapp.controller('CostsCtrl', ['$scope', '$rootScope', '$translate', '$state'
         if ($scope.dates.objectType.value === 'PETROL') {
 
         } else {
+            $scope.costsList = {};
             $http.get('ajax/getCosts.php', {
                 params: {
                     carId: $rootScope.currentCar.id,
@@ -75,6 +76,6 @@ mycarapp.controller('CostsCtrl', ['$scope', '$rootScope', '$translate', '$state'
         open2: false
     };
 
-    $scope.format = 'dd-MM-yyyy';
+    $scope.format = 'yyyy-MM-dd';
 	
 }]);

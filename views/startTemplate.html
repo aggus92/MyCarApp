@@ -7,28 +7,34 @@
                     {{'ACCORDION_SHOW_REGISTRATION' | translate}} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': p1.open, 'glyphicon-chevron-right': !p1.open}"></i>
                 </div>
             </uib-accordion-heading>
-            <div class="col-md-12">
-                <div class="input-group">
-                    <p class="input-group">
-                        <span class="input-group-addon">{{'COMMON_DATE' | translate}}</span>
-                        <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="registration.registration_date" is-open="state.open" datepicker-options="dateOptions" ng-required="true" close-text="Close" show-button-bar="false"/>
-                        <span class="input-group-btn">
-                    <button type="button" class="btn button-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
-                </span>
-                    </p>
-                </div>
-                <div class="input-group">
-                    <span class="input-group-addon">{{'COMMON_ODOMETER' | translate}}</span>
-                    <input type="number" class="form-control" min="0" step="10000" data-number-to-fixed="2" data-number-stepfactor="100" class="currency" ng-model="registration.registration_odometer">
-                </div>
-                <br>
-                <div class="input-group">
-                    <span class="input-group-addon">{{'COMMON_PLATE' | translate}}</span>
-                    <input type="text" class="form-control" maxlength="200" ng-model="registration.plate_no">
-                </div>
-                <br>
-                <button class="btn button-default pull-right" ng-click="saveRegistration()" ng-disabled="$root.currentCar == null">{{'BUTTON_SAVE' | translate}}</button>
-            </div>
+            <form name="registrationForm" novalidate>
+                <fieldset>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="input-group">
+                                <p class="input-group">
+                                    <span class="input-group-addon">{{'COMMON_DATE' | translate}}</span>
+                                    <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="registration.registration_date" is-open="state.open" datepicker-options="dateOptions" ng-required="true" close-text="Close" show-button-bar="false" required/>
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn button-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-addon">{{'COMMON_ODOMETER' | translate}}</span>
+                                <input type="number" class="form-control" min="0" step="10000" data-number-to-fixed="2" data-number-stepfactor="100" class="currency" ng-model="registration.registration_odometer" required>
+                            </div>
+                            <br>
+                            <div class="input-group">
+                                <span class="input-group-addon">{{'COMMON_PLATE' | translate}}</span>
+                                <input type="text" class="form-control" maxlength="200" ng-model="registration.plate_no" required>
+                            </div>
+                            <br>
+                            <button class="btn button-default pull-right" ng-click="saveRegistration()" ng-disabled="$root.currentCar == null && !registrationForm.$valid">{{'BUTTON_SAVE' | translate}}</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
         </div>
         <div uib-accordion-group class="panel-default" is-open="p2.open">
             <uib-accordion-heading>

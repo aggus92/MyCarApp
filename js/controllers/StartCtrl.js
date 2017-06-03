@@ -85,5 +85,5 @@ mycarapp.controller('StartCtrl', ['$scope', '$rootScope', '$translate', '$http',
         open: false
     };
 
-    $scope.format = 'dd-MM-yyyy';
+    $scope.format = 'yyyy-MM-dd';
 }]);

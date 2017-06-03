@@ -12,6 +12,7 @@ mycarapp.controller('HeaderCtrl', ['$scope', '$rootScope', '$translate', '$cooki
 	
 	$scope.logout = function() {
 		$rootScope.globals = {};
+		$rootScope.currentCar = null;
 		$cookies.remove('globals');
 		$location.path('/login');
 	}

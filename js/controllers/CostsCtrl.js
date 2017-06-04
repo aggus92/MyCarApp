@@ -12,7 +12,7 @@ mycarapp.controller('CostsCtrl', ['$scope', '$rootScope', '$translate', '$state'
     dateStart.setDate(dateEnd.getDate() - 7);
 	
 	$scope.dates = {
-        objectType: {type: 'COMMON_COST_GENERAL', value: 'GENERAL'},
+        objectType: {type: 'COMMON_COST_PETROL', value: 'PETROL'},
         endDate: new Date(dateEnd),
         startDate: dateStart
     };

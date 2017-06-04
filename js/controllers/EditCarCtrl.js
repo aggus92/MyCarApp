@@ -8,7 +8,7 @@ mycarapp.controller('EditCarCtrl', ['$scope', '$rootScope', '$translate', '$stat
 		$http.post("ajax/updateCar.php", {
 			params: {
 				id: $scope.car.id,
-				is_default: parseInt($scope.car.is_default),
+				is_default: parseInt($scope.car.is_default, 10),
 				model: $scope.car.model,
 				year: $scope.car.year,
 				color: $scope.car.color

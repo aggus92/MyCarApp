@@ -23,9 +23,8 @@ CREATE TABLE IF NOT EXISTS `car` (
 );
 
 CREATE TABLE IF NOT EXISTS `fuel_type` (
-  `id` INT NOT NULL AUTO_INCREMENT,
   `type` VARCHAR(50) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`type`)
 );
 
 CREATE TABLE IF NOT EXISTS `petrol` (
@@ -35,10 +34,10 @@ CREATE TABLE IF NOT EXISTS `petrol` (
   `total_cost` DOUBLE NOT NULL,
   `quantity` DOUBLE NOT NULL,
   `odometer` INT NOT NULL,
-  `fuel_type_id` INT NOT NULL,
+  `fuel_type` INT NOT NULL,
   PRIMARY KEY (`id`),
   FOREIGN KEY(car_id) REFERENCES car(id),
-  FOREIGN KEY (fuel_type_id) REFERENCES fuel_type(id)
+  FOREIGN KEY (fuel_type) REFERENCES fuel_type(type)
 );
 
 CREATE TABLE IF NOT EXISTS `registration` (

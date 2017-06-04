@@ -79,3 +79,41 @@
 	  </table>
 	</div>
 </div>
+<div class="row" ng-if="dates.objectType.value == 'PETROL'">
+    <div class="col-md-12">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>{{'TABLE_HEADER_DATE' | translate}}</th>
+                <th>{{'TABLE_HEADER_ODOMETER' | translate}}</th>
+                <th>{{'TABLE_HEADER_QUANTITY' | translate}}</th>
+                <th>{{'TABLE_HEADER_COST' | translate}}</th>
+                <th>{{'TABLE_HEADER_FUEL_TYPE' | translate}}</th>
+                <th>&nbsp;</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="petrol in petrolList track by $index">
+                <td>
+                    {{petrol.date}}
+                </td>
+                <td>
+                    {{petrol.odometer}}
+                </td>
+                <td>
+                    {{petrol.quantity}}
+                </td>
+                <td>
+                    {{petrol.total_cost}}
+                </td>
+                <td>
+                    {{petrol.fuel_type}}
+                </td>
+                <td class="text-right">
+
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

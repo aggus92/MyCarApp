@@ -19,7 +19,7 @@ mycarapp.controller('AddCostCtrl', ['$scope', '$rootScope', '$translate', '$stat
     ];
 
     $scope.type = {
-        costType: {type: 'COMMON_COST_GENERAL', value: 'GENERAL'}
+        costType: {type: 'COMMON_COST_PETROL', value: 'PETROL'}
     };
 	
 	$scope.saveCost = function() {
@@ -31,6 +31,27 @@ mycarapp.controller('AddCostCtrl', ['$scope', '$rootScope', '$translate', '$stat
             }
         });
 	};
+
+    $scope.fuelTypes = [
+        {type:'COMMON_FUEL_BENZINE', value: 'BENZINE'},
+        {type:'COMMON_FUEL_DIESEL', value: 'DIESEL'},
+        {type:'COMMON_FUEL_LPG', value: 'LPG'}
+    ];
+
+    $scope.petrol = {
+        fuelType: {type: 'COMMON_FUEL_BENZINE', value: 'BENZINE'},
+        odometer: 1,
+        total_cost: 1
+    };
+
+    $scope.savePetrol = function() {
+        $scope.petrol.car_id = $rootScope.currentCar.id;
+        $http.post("ajax/addPetrol.php", $scope.cost).then(function (response) {
+            if (response.status === 200) {
+                growl.addSuccessMessage("NOTIFICATION_ADD_NEW_COST");
+            }
+        });
+    };
 
     $scope.open = function() {
         $scope.state = {

@@ -16,31 +16,85 @@
 </div>
 <br>
 <div class="row" ng-if="type.costType.value != 'PETROL'">
-    <div class="col-md-12">
-        <div class="input-group">
-            <p class="input-group">
-                <span class="input-group-addon">{{'COMMON_DATE' | translate}}</span>
-                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="cost.date" is-open="state.open" datepicker-options="dateOptions" ng-required="true" close-text="Close" show-button-bar="false"/>
-                <span class="input-group-btn">
-                    <button type="button" class="btn button-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
-                </span>
-            </p>
-        </div>
-        <div class="input-group">
-            <span class="input-group-addon">{{'COMMON_ODOMETER' | translate}}</span>
-            <input type="number" class="form-control" min="1" step="1000" class="currency" ng-model="cost.odometer">
-        </div>
-        <br>
-        <div class="input-group">
-            <span class="input-group-addon">{{'COMMON_DESCRIPTION' | translate}}</span>
-            <input type="text" class="form-control" maxlength="200" ng-model="cost.description">
-        </div>
-        <br>
-        <div class="input-group">
-            <span class="input-group-addon">{{'COMMON_TOTAL_COST' | translate}} [zł]</span>
-            <input type="number" class="form-control" min="1" step="50" ng-model="cost.total_cost">
-        </div>
-        <br>
-        <button class="btn button-default pull-right" ng-click="saveCost()">{{'BUTTON_SAVE' | translate}}</button>
-    </div>
+    <form name="costForm" novalidate>
+        <fieldset>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="input-group">
+                        <p class="input-group">
+                            <span class="input-group-addon">{{'COMMON_DATE' | translate}}</span>
+                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="cost.date" is-open="state.open" datepicker-options="dateOptions" ng-required="true" close-text="Close" show-button-bar="false" required/>
+                            <span class="input-group-btn">
+                                <button type="button" class="btn button-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                        </p>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">{{'COMMON_ODOMETER' | translate}}</span>
+                        <input type="number" class="form-control" min="1" step="1000" ng-model="cost.odometer" required>
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <span class="input-group-addon">{{'COMMON_DESCRIPTION' | translate}}</span>
+                        <input type="text" class="form-control" maxlength="200" ng-model="cost.description">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <span class="input-group-addon">{{'COMMON_TOTAL_COST' | translate}} [zł]</span>
+                        <input type="number" class="form-control" min="1" step="50" ng-model="cost.total_cost" required>
+                    </div>
+                    <br>
+                    <button class="btn button-default pull-right" ng-click="saveCost()" ng-disabled="$root.currentCar == null && !costForm.$valid">{{'BUTTON_SAVE' | translate}}</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+<div class="row" ng-if="type.costType.value == 'PETROL'">
+    <form name="petrolForm" novalidate>
+        <fieldset>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="input-group">
+                        <p class="input-group">
+                            <span class="input-group-addon">{{'COMMON_DATE' | translate}}</span>
+                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="petrol.date" is-open="state.open" datepicker-options="dateOptions" ng-required="true" close-text="Close" show-button-bar="false" required/>
+                            <span class="input-group-btn">
+                                <button type="button" class="btn button-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                        </p>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">{{'COMMON_ODOMETER' | translate}}</span>
+                        <input type="number" class="form-control" min="1" step="1000" ng-model="petrol.odometer" required>
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <span class="input-group-addon">{{'COMMON_QUANTITY' | translate}}</span>
+                        <input type="number" class="form-control" min="1" step="50" ng-model="petrol.quantity" required>
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <span class="input-group-addon">{{'COMMON_TOTAL_COST' | translate}} [zł]</span>
+                        <input type="number" class="form-control" min="1" step="50" ng-model="petrol.total_cost" required>
+                    </div>
+                    <br>
+                    <div class="col-md-12">
+                        <div class="col-sm-3" style="padding-left: 0;">
+                            <label>{{'COMMON_FUEL_TYPE' | translate}}</label>
+                            <ui-select ng-model="petrol.fuelType" required>
+                                <ui-select-match>
+                                    {{$select.selected.type | translate}}
+                                </ui-select-match>
+                                <ui-select-choices repeat="item in fuelTypes">
+                                    <span>{{item.type | translate}}</span>
+                                </ui-select-choices>
+                            </ui-select>
+                        </div>
+                    </div>
+                    <button class="btn button-default pull-right" ng-click="savePetrol()" ng-disabled="$root.currentCar == null && !petrolForm.$valid">{{'BUTTON_SAVE' | translate}}</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
 </div>

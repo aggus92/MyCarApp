@@ -27,7 +27,18 @@ mycarapp.controller('CostsCtrl', ['$scope', '$rootScope', '$translate', '$state'
 
     $scope.search = function() {
         if ($scope.dates.objectType.value === 'PETROL') {
-
+            $scope.petrolList = {};
+            $http.get('ajax/getPetrolList.php', {
+                params: {
+                    carId: $rootScope.currentCar.id,
+                    startDate: $scope.dates.startDate,
+                    endDate: $scope.dates.endDate
+                }
+            }).then(function (response) {
+                if (response.data.records != undefined && response.data.records.length > 0) {
+                    $scope.petrolList = response.data.records;
+                }
+            });
         } else {
             $scope.costsList = {};
             $http.get('ajax/getCosts.php', {

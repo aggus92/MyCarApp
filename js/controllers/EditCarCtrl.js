@@ -1,6 +1,6 @@
 'use strict';
 
-mycarapp.controller('EditCarCtrl', ['$scope', '$rootScope', '$translate', '$stateParams', '$http', function($scope, $rootScope, $translate, $stateParams, $http) {
+mycarapp.controller('EditCarCtrl', ['$scope', '$rootScope', '$translate', '$stateParams', '$http', 'growl', function($scope, $rootScope, $translate, $stateParams, $http, growl) {
 	
 	$scope.car = $stateParams.carToEdit;
 	
@@ -15,9 +15,10 @@ mycarapp.controller('EditCarCtrl', ['$scope', '$rootScope', '$translate', '$stat
 				color: $scope.car.color
 			}
 		}).then(function (response) {
-			console.log(response);
+            if (response.status === 200) {
+                growl.addSuccessMessage("NOTIFICATION_UPDATE");
+            }
         });
     }
-
 }]);
 

@@ -13,7 +13,6 @@ mycarapp.controller('CarListCtrl', ['$scope', '$rootScope', '$translate', '$stat
 				userId: $rootScope.globals.currentUser.id
 			}
 		}).then(function (response) {
-			console.log(response);
 			if (response.data.records.length > 0) {
 				$scope.userCars = response.data.records;
 			}

@@ -9,7 +9,6 @@ mycarapp.controller('AddCarCtrl', ['$scope', '$rootScope', '$translate', '$state
 		$scope.car.user_id = $rootScope.globals.currentUser.id;
 		console.log($scope.car);
 		$http.post("ajax/addCar.php", $scope.car).then(function (response) {
-			console.log(response);
             if (response.status === 200) {
                 growl.addSuccessMessage("NOTIFICATION_ADD_NEW_CAR");
             }

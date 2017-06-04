@@ -26,7 +26,6 @@ mycarapp.controller('AddCostCtrl', ['$scope', '$rootScope', '$translate', '$stat
         $scope.cost.car_id = $rootScope.currentCar.id;
         $scope.cost.type = $scope.type.costType.value;
         $http.post("ajax/addCost.php", $scope.cost).then(function (response) {
-            console.log(response);
             if (response.status === 200) {
                 growl.addSuccessMessage("NOTIFICATION_ADD_NEW_COST");
             }

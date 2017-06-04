@@ -52,7 +52,6 @@ mycarapp.controller('StartCtrl', ['$scope', '$rootScope', '$translate', '$http',
                     plate_no: $scope.registration.plate_no
                 }
             }).then(function (response) {
-                console.log(response);
                 $scope.afterSaveRegistration(response);
             });
         } else {

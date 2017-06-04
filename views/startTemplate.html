@@ -22,7 +22,7 @@
                             </div>
                             <div class="input-group">
                                 <span class="input-group-addon">{{'COMMON_ODOMETER' | translate}}</span>
-                                <input type="number" class="form-control" min="0" step="10000" data-number-to-fixed="2" data-number-stepfactor="100" class="currency" ng-model="registration.registration_odometer" required>
+                                <input type="number" class="form-control" min="0" step="10000" data-number-to-fixed="2" data-number-stepfactor="100" ng-model="registration.registration_odometer" required>
                             </div>
                             <br>
                             <div class="input-group">
@@ -42,9 +42,32 @@
                     {{'ACCORDION_SHOW_TECH_REVIEW' | translate}} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': p2.open, 'glyphicon-chevron-right': !p2.open}"></i>
                 </div>
             </uib-accordion-heading>
-            <div class="col-md-12">
-
-            </div>
+            <form name="techReviewForm" novalidate>
+                <fieldset>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="input-group">
+                                <p class="input-group">
+                                    <span class="input-group-addon">{{'COMMON_DATE' | translate}}</span>
+                                    <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="techReview.date" is-open="state.open" datepicker-options="dateOptions" ng-required="true" close-text="Close" show-button-bar="false" ng-disabled="true"/>
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn button-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-addon">{{'COMMON_ODOMETER' | translate}}</span>
+                                <input type="text" class="form-control" ng-model="techReview.odometer" ng-disabled="true">
+                            </div>
+                            <br>
+                            <div class="input-group">
+                                <span class="input-group-addon">{{'COMMON_DESCRIPTION' | translate}}</span>
+                                <input type="text" class="form-control" maxlength="200" ng-model="techReview.description" ng-disabled="true">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
         </div>
     </uib-accordion>
 </div>

@@ -5,11 +5,10 @@ mycarapp.controller('EditCarCtrl', ['$scope', '$rootScope', '$translate', '$stat
 	$scope.car = $stateParams.carToEdit;
 	
 	$scope.saveCar = function() {
-		console.log($scope.car);
 		$http.post("ajax/updateCar.php", {
 			params: {
 				id: $scope.car.id,
-				is_default: $scope.car.is_default,
+				is_default: parseInt($scope.car.is_default),
 				model: $scope.car.model,
 				year: $scope.car.year,
 				color: $scope.car.color

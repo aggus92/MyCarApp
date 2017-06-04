@@ -18,7 +18,9 @@ mycarapp.controller('StartCtrl', ['$scope', '$rootScope', '$translate', '$http',
             }).then(function (response) {
                 console.log(response);
                 if (response.data.records != undefined && response.data.records.length > 0) {
+                    var date = response.data.records[0].registration_date;
                     $scope.registration = response.data.records[0];
+                    $scope.registration.registration_date = new Date(date);
                     $scope.isRegistration = true;
                 }
             });
@@ -35,7 +37,9 @@ mycarapp.controller('StartCtrl', ['$scope', '$rootScope', '$translate', '$http',
             }).then(function (response) {
                 console.log(response);
                 if (response.data.records != undefined && response.data.records.length > 0) {
-                    $scope.techReview = response.data.records;
+                    var date = response.data.records[0].date;
+                    $scope.techReview = response.data.records[0];
+                    $scope.techReview.date = new Date(date);
                 }
             });
         }

@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `petrol` (
   `total_cost` DOUBLE NOT NULL,
   `quantity` DOUBLE NOT NULL,
   `odometer` INT NOT NULL,
-  `fuel_type` INT NOT NULL,
+  `fuel_type` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`id`),
   FOREIGN KEY(car_id) REFERENCES car(id),
   FOREIGN KEY (fuel_type) REFERENCES fuel_type(type)

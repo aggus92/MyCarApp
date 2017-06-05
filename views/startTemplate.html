@@ -22,7 +22,7 @@
                             </div>
                             <div class="input-group">
                                 <span class="input-group-addon">{{'COMMON_ODOMETER' | translate}}</span>
-                                <input type="number" class="form-control" min="0" step="10000" data-number-to-fixed="2" data-number-stepfactor="100" ng-model="registration.registration_odometer" required>
+                                <input type="number" class="form-control" min="1" step="10000" ng-model="registration.registration_odometer" required>
                             </div>
                             <br>
                             <div class="input-group">
@@ -30,7 +30,7 @@
                                 <input type="text" class="form-control" maxlength="200" ng-model="registration.plate_no" required>
                             </div>
                             <br>
-                            <button class="btn button-default pull-right" ng-click="saveRegistration()" ng-disabled="$root.currentCar == null && !registrationForm.$valid">{{'BUTTON_SAVE' | translate}}</button>
+                            <button class="btn button-default pull-right" ng-click="saveRegistration()" ng-disabled="$root.currentCar == null || !registrationForm.$valid">{{'BUTTON_SAVE' | translate}}</button>
                         </div>
                     </div>
                 </fieldset>

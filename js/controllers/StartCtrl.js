@@ -10,7 +10,7 @@ mycarapp.controller('StartCtrl', ['$scope', '$rootScope', '$translate', '$http',
     $scope.isRegistration = false;
 
     $scope.getRegistration = function () {
-        if ($rootScope.currentCar.id != null) {
+        if ($rootScope.currentCar != null && $rootScope.currentCar.id != null) {
             $http.get('ajax/getRegistration.php', {
                 params: {
                     carId: $rootScope.currentCar.id
@@ -30,7 +30,7 @@ mycarapp.controller('StartCtrl', ['$scope', '$rootScope', '$translate', '$http',
     $scope.getRegistration();
 
     $scope.getTechReview = function () {
-        if ($rootScope.currentCar.id != null) {
+        if ($rootScope.currentCar != null && $rootScope.currentCar.id != null) {
             $http.get('ajax/getTechReview.php', {
                 params: {
                     carId: $rootScope.currentCar.id

@@ -50,7 +50,7 @@ mycarapp.controller('AddCostCtrl', ['$scope', '$rootScope', '$translate', '$stat
     $scope.savePetrol = function() {
         $scope.petrol.car_id = $rootScope.currentCar.id;
         $scope.petrol.fuelType = $scope.fuelType.type.value;
-        $http.post("ajax/addPetrol.php", $scope.cost).then(function (response) {
+        $http.post("ajax/addPetrol.php", $scope.petrol).then(function (response) {
             if (response.status === 200) {
                 growl.addSuccessMessage("NOTIFICATION_ADD_NEW_COST");
             }

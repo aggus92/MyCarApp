@@ -44,7 +44,7 @@
                         <input type="number" class="form-control" min="1" step="50" ng-model="cost.total_cost" required>
                     </div>
                     <br>
-                    <button class="btn button-default pull-right" ng-click="saveCost()" ng-disabled="$root.currentCar == null && !costForm.$valid">{{'BUTTON_SAVE' | translate}}</button>
+                    <button class="btn button-default pull-right" ng-click="saveCost()" ng-disabled="$root.currentCar == null || !costForm.$valid">{{'BUTTON_SAVE' | translate}}</button>
                 </div>
             </div>
         </fieldset>
@@ -92,7 +92,7 @@
                             </ui-select>
                         </div>
                     </div>
-                    <button class="btn button-default pull-right" ng-click="savePetrol()" ng-disabled="$root.currentCar == null && !petrolForm.$valid">{{'BUTTON_SAVE' | translate}}</button>
+                    <button class="btn button-default pull-right" ng-click="savePetrol()" ng-disabled="$root.currentCar == null || !petrolForm.$valid">{{'BUTTON_SAVE' | translate}}</button>
                 </div>
             </div>
         </fieldset>

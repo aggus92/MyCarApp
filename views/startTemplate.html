@@ -22,7 +22,7 @@
                             </div>
                             <div class="input-group">
                                 <span class="input-group-addon">{{'COMMON_ODOMETER' | translate}}</span>
-                                <input type="number" class="form-control" min="1" step="10000" ng-model="registration.registration_odometer" required>
+                                <input type="number" class="form-control" ng-model="registration.registration_odometer" required>
                             </div>
                             <br>
                             <div class="input-group">
@@ -49,10 +49,7 @@
                             <div class="input-group">
                                 <p class="input-group">
                                     <span class="input-group-addon">{{'COMMON_DATE' | translate}}</span>
-                                    <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="techReview.date" is-open="state.open" datepicker-options="dateOptions" ng-required="true" close-text="Close" show-button-bar="false" ng-disabled="true"/>
-                                    <span class="input-group-btn">
-                                        <button type="button" class="btn button-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
-                                    </span>
+                                    <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="techReview.date" datepicker-options="dateOptions" ng-required="true" close-text="Close" show-button-bar="false" ng-disabled="true"/>
                                 </p>
                             </div>
                             <div class="input-group">

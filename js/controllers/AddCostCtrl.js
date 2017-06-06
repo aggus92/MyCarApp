@@ -5,10 +5,8 @@
 
 mycarapp.controller('AddCostCtrl', ['$scope', '$rootScope', '$translate', '$state', '$stateParams', '$http', 'growl', function($scope, $rootScope, $translate, $state, $stateParams, $http, growl) {
 
-	$scope.cost = {
-        odometer: 1,
-        total_cost: 1
-    };
+	$scope.cost = {};
+    $scope.petrol = {};
 
     $scope.objectTypes = [
         {type:'COMMON_COST_PETROL', value: 'PETROL'},
@@ -21,16 +19,6 @@ mycarapp.controller('AddCostCtrl', ['$scope', '$rootScope', '$translate', '$stat
     $scope.type = {
         costType: {type: 'COMMON_COST_PETROL', value: 'PETROL'}
     };
-	
-	$scope.saveCost = function() {
-        $scope.cost.car_id = $rootScope.currentCar.id;
-        $scope.cost.type = $scope.type.costType.value;
-        $http.post("ajax/addCost.php", $scope.cost).then(function (response) {
-            if (response.status === 200) {
-                growl.addSuccessMessage("NOTIFICATION_ADD_NEW_COST");
-            }
-        });
-	};
 
     $scope.fuelTypes = [
         {type:'COMMON_FUEL_BENZINE', value: 'BENZINE'},
@@ -38,23 +26,33 @@ mycarapp.controller('AddCostCtrl', ['$scope', '$rootScope', '$translate', '$stat
         {type:'COMMON_FUEL_LPG', value: 'LPG'}
     ];
 
-    $scope.petrol = {
-        odometer: 1,
-        total_cost: 1
-    };
-
     $scope.fuelType = {
         type: {type: 'COMMON_FUEL_BENZINE', value: 'BENZINE'}
     };
+	
+	$scope.saveCost = function() {
+        if ($rootScope.currentCar != null && $rootScope.currentCar.id != null) {
+            $scope.cost.car_id = $rootScope.currentCar.id;
+            $scope.cost.type = $scope.type.costType.value;
+            console.log($scope.cost);
+            $http.post("ajax/addCost.php", $scope.cost).then(function (response) {
+                if (response.status === 200) {
+                    growl.addSuccessMessage("NOTIFICATION_ADD_NEW_COST");
+                }
+            });
+        }
+	};
 
     $scope.savePetrol = function() {
-        $scope.petrol.car_id = $rootScope.currentCar.id;
-        $scope.petrol.fuelType = $scope.fuelType.type.value;
-        $http.post("ajax/addPetrol.php", $scope.petrol).then(function (response) {
-            if (response.status === 200) {
-                growl.addSuccessMessage("NOTIFICATION_ADD_NEW_COST");
-            }
-        });
+        if ($rootScope.currentCar != null && $rootScope.currentCar.id != null) {
+            $scope.petrol.car_id = $rootScope.currentCar.id;
+            $scope.petrol.fuelType = $scope.fuelType.type.value;
+            $http.post("ajax/addPetrol.php", $scope.petrol).then(function (response) {
+                if (response.status === 200) {
+                    growl.addSuccessMessage("NOTIFICATION_ADD_NEW_COST");
+                }
+            });
+        }
     };
 
     $scope.open = function() {

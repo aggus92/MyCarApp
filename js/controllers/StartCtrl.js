@@ -21,7 +21,7 @@ mycarapp.controller('StartCtrl', ['$scope', '$rootScope', '$translate', '$http',
                     var date = response.data.records[0].registration_date;
                     $scope.registration = response.data.records[0];
                     $scope.registration.registration_date = new Date(date);
-                    $scope.registration.odometer = parseInt($scope.registration.odometer, 10);
+                    $scope.registration.registration_odometer = parseInt($scope.registration.registration_odometer, 10);
                     $scope.isRegistration = true;
                 }
             });

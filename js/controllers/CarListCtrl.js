@@ -8,15 +8,17 @@ mycarapp.controller('CarListCtrl', ['$scope', '$rootScope', '$translate', '$stat
 	$scope.userCars = [];
 	
 	$scope.getCarList = function() {
-		$http.get('ajax/getCars.php', {
-			params: {
-				userId: $rootScope.globals.currentUser.id
-			}
-		}).then(function (response) {
-			if (response.data.records.length > 0) {
-				$scope.userCars = response.data.records;
-			}
-		});
+        if ($rootScope.currentCar != null && $rootScope.currentCar.id != null) {
+            $http.get('ajax/getCars.php', {
+                params: {
+                    userId: $rootScope.globals.currentUser.id
+                }
+            }).then(function (response) {
+                if (response.data.records.length > 0) {
+                    $scope.userCars = response.data.records;
+                }
+            });
+        }
 	};
 	
 	$scope.getCarList();

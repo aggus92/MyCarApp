@@ -31,7 +31,7 @@
                     </div>
                     <div class="input-group">
                         <span class="input-group-addon">{{'COMMON_ODOMETER' | translate}}</span>
-                        <input type="number" class="form-control" min="1" step="1000" ng-model="cost.odometer" required>
+                        <input type="number" class="form-control" ng-model="cost.odometer" required>
                     </div>
                     <br>
                     <div class="input-group">
@@ -41,7 +41,7 @@
                     <br>
                     <div class="input-group">
                         <span class="input-group-addon">{{'COMMON_TOTAL_COST' | translate}} [zł]</span>
-                        <input type="number" class="form-control" min="1" step="50" ng-model="cost.total_cost" required>
+                        <input type="number" class="form-control" ng-model="cost.total_cost" required>
                     </div>
                     <br>
                     <button class="btn button-default pull-right" ng-click="saveCost()" ng-disabled="$root.currentCar == null || !costForm.$valid">{{'BUTTON_SAVE' | translate}}</button>
@@ -66,17 +66,17 @@
                     </div>
                     <div class="input-group">
                         <span class="input-group-addon">{{'COMMON_ODOMETER' | translate}}</span>
-                        <input type="number" class="form-control" min="1" step="1000" ng-model="petrol.odometer" required>
+                        <input type="number" class="form-control" ng-model="petrol.odometer" required>
                     </div>
                     <br>
                     <div class="input-group">
                         <span class="input-group-addon">{{'COMMON_QUANTITY' | translate}}</span>
-                        <input type="number" class="form-control" min="1" step="50" ng-model="petrol.quantity" required>
+                        <input type="number" class="form-control" ng-model="petrol.quantity" required>
                     </div>
                     <br>
                     <div class="input-group">
                         <span class="input-group-addon">{{'COMMON_TOTAL_COST' | translate}} [zł]</span>
-                        <input type="number" class="form-control" min="1" step="50" ng-model="petrol.total_cost" required>
+                        <input type="number" class="form-control" ng-model="petrol.total_cost" required>
                     </div>
                     <br>
                     <div class="col-md-12">

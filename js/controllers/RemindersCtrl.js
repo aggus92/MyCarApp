@@ -7,6 +7,8 @@ mycarapp.controller('RemindersCtrl', ['$scope', '$rootScope', '$stateParams', '$
 
     //$scope.costToRemind = $stateParams.costToRemind;
 
+    $scope.remindersList = [];
+
     $scope.getTechReview = function () {
         if ($rootScope.currentCar != null && $rootScope.currentCar.id != null) {
             $http.get('ajax/getTechReview.php', {
@@ -16,7 +18,14 @@ mycarapp.controller('RemindersCtrl', ['$scope', '$rootScope', '$stateParams', '$
             }).then(function (response) {
                 console.log(response);
                 if (response.data.records != undefined && response.data.records.length > 0) {
-
+                    var currentDate = new Date();
+                    var date = response.data.record[0].date;
+                    var daysToEnd = Math.round((currentDate.getTime() - date.getTime()) / (1000 * 60 * 60 * 24));
+                    $scope.remindersList.push({
+                        type: 'COMMON_COST_TECH_REVIEW',
+                        date: response.data.record[0].date,
+                        daysToEnd: daysToEnd
+                    })
                 }
             });
         }
@@ -32,7 +41,14 @@ mycarapp.controller('RemindersCtrl', ['$scope', '$rootScope', '$stateParams', '$
             }).then(function (response) {
                 console.log(response);
                 if (response.data.records != undefined && response.data.records.length > 0) {
-
+                    var currentDate = new Date();
+                    var date = response.data.record[0].date;
+                    var daysToEnd = Math.round((currentDate.getTime() - date.getTime()) / (1000 * 60 * 60 * 24));
+                    $scope.remindersList.push({
+                        type: 'COMMON_COST_INSURANCE',
+                        date: response.data.record[0].date,
+                        daysToEnd: daysToEnd
+                    })
                 }
             });
         }

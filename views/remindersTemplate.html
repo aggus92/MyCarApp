@@ -4,17 +4,21 @@
             <thead>
             <tr>
                 <th>{{'TABLE_HEADER_TYPE' | translate}}</th>
+                <th>{{'TABLE_HEADER_DATE' | translate}}</th>
                 <th>{{'TABLE_HEADER_ENDS' | translate}}</th>
                 <th>&nbsp;</th>
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="cost in costsList track by $index">
+            <tr ng-repeat="reminder in remindersList track by $index">
                 <td>
-                    {{cost.type}}
+                    {{reminder.type | translate}}
                 </td>
                 <td>
-                    {{cost.date_end}}
+                    {{reminder.date}}
+                </td>
+                <td>
+                    {{reminder.daysToEnd}}
                 </td>
                 <td class="text-right">
                 </td>

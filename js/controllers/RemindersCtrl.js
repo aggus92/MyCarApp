@@ -3,7 +3,7 @@
  */
 'use strict';
 
-mycarapp.controller('RemindersCtrl', ['$scope', '$rootScope', '$stateParams', '$translate', function($scope, $rootScope, $stateParams, $translate) {
+mycarapp.controller('RemindersCtrl', ['$scope', '$rootScope', '$stateParams', '$translate', '$http', function($scope, $rootScope, $stateParams, $translate, $http) {
 
     //$scope.costToRemind = $stateParams.costToRemind;
 

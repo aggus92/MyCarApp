@@ -19,7 +19,7 @@ mycarapp.controller('RemindersCtrl', ['$scope', '$rootScope', '$stateParams', '$
                 console.log(response);
                 if (response.data.records != undefined && response.data.records.length > 0) {
                     var currentDate = new Date();
-                    var date = response.data.records[0].date;
+                    var date = new Date(response.data.records[0].date);
                     var daysToEnd = Math.round((currentDate.getTime() - date.getTime()) / (1000 * 60 * 60 * 24));
                     $scope.remindersList.push({
                         type: 'COMMON_COST_TECH_REVIEW',
@@ -42,7 +42,7 @@ mycarapp.controller('RemindersCtrl', ['$scope', '$rootScope', '$stateParams', '$
                 console.log(response);
                 if (response.data.records != undefined && response.data.records.length > 0) {
                     var currentDate = new Date();
-                    var date = response.data.records[0].date;
+                    var date = new Date(response.data.records[0].date);
                     var daysToEnd = Math.round((currentDate.getTime() - date.getTime()) / (1000 * 60 * 60 * 24));
                     $scope.remindersList.push({
                         type: 'COMMON_COST_INSURANCE',

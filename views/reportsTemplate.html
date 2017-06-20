@@ -1,1 +1,41 @@
-reportTemplate
+<h3 class="header-h2"></h3>
+<div class="row">
+    <div class="col-md-12">
+        <div class="col-sm-3" style="padding-left: 0;">
+            <label>{{'COMMON_COST_TYPE' | translate}}</label>
+            <ui-select ng-model="dates.objectType">
+                <ui-select-match>
+                    {{$select.selected.type | translate}}
+                </ui-select-match>
+                <ui-select-choices repeat="item in objectTypes">
+                    <span>{{item.type | translate}}</span>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+        <div class="col-md-8">
+            <div class="col-sm-6" style="padding-left: 0;">
+                <label>{{'COMMON_DATE_FROM' | translate}}:</label>
+                <p class="input-group">
+                    <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dates.startDate" is-open="state.open" max-date="maxDate" datepicker-options="dateOptions" ng-required="true" close-text="Close" show-button-bar="false"/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn button-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+            </div>
+            <div class="col-sm-6" style="padding-left: 0;">
+                <label>{{'COMMON_DATE_TO' | translate}}:</label>
+                <p class="input-group">
+                    <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dates.endDate" is-open="state.open2" max-date="maxDate" datepicker-options="dateOptions" ng-required="true" close-text="Close" show-button-bar="false"/>
+                    <span class="input-group-btn">
+						<button type="button" class="btn button-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
+					</span>
+                </p>
+            </div>
+        </div>
+        <div class="col-md-1 margin-top-20">
+            <button class="btn button-default" ng-click="downloadReport()">
+                {{'BUTTON_DOWNLOAD' | translate}}
+            </button>
+        </div>
+    </div>
+</div>

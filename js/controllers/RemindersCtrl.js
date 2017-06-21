@@ -18,7 +18,7 @@ mycarapp.controller('RemindersCtrl', ['$scope', '$rootScope', '$stateParams', '$
             }).then(function (response) {
                 console.log(response);
                 if (response.data.records != undefined && response.data.records.length > 0) {
-                    var endDate = new Dtae();
+                    var endDate = new Date();
                     endDate.setDate(endDate.getDate() + 365);
                     var currentDate = new Date();
                     var date = new Date(response.data.records[0].date);
@@ -44,7 +44,7 @@ mycarapp.controller('RemindersCtrl', ['$scope', '$rootScope', '$stateParams', '$
             }).then(function (response) {
                 console.log(response);
                 if (response.data.records != undefined && response.data.records.length > 0) {
-                    var endDate = new Dtae();
+                    var endDate = new Date();
                     endDate.setDate(endDate.getDate() + 365);
                     var currentDate = new Date();
                     var date = new Date(response.data.records[0].date);

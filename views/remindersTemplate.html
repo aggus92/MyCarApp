@@ -19,7 +19,7 @@
                     {{reminder.date}}
                 </td>
                 <td>
-                    {{reminder.endDate}}
+                    {{reminder.endDate | date: 'yyyy-MM-dd'}}
                 </td>
                 <td>
                     <span ng-if="reminder.daysToEnd >= 0">

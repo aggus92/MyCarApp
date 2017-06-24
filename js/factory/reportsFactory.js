@@ -1,7 +1,7 @@
 /**
  * Created by aggus on 23.06.2017.
  */
-mycarapp.factory('reportsFactory', ['$sce','$state', '$filter', '$rootScope', '$modal', function($sce, $state, $filter, $rootScope, $modal) {
+mycarapp.factory('reportsFactory', ['$scope', '$rootScope', function($scope, $rootScope) {
     var factory = {};
 
     factory.convertArrayOfObjectsToCSV = function(args) {

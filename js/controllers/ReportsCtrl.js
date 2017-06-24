@@ -3,7 +3,7 @@
  */
 'use strict';
 
-mycarapp.controller('ReportsCtrl', ['$scope', '$rootScope', '$translate', '$http', function($scope, $rootScope, $translate, $http) {
+mycarapp.controller('ReportsCtrl', ['$scope', '$rootScope', '$translate', '$http', 'reportsFactory', function($scope, $rootScope, $translate, $http, reportsFactory) {
 
     $scope.maxDate = new Date();
     $scope.maxDate.setDate($scope.maxDate.getDate());
@@ -35,7 +35,7 @@ mycarapp.controller('ReportsCtrl', ['$scope', '$rootScope', '$translate', '$http
                 }
             }).then(function (response) {
                 if (response.data.records != undefined && response.data.records.length > 0) {
-                    $scope.preparePetrolsReport(response.data.records);
+                    $scope.downloadCSV(response.data.records);
                 }
             });
         } else {
@@ -49,21 +49,16 @@ mycarapp.controller('ReportsCtrl', ['$scope', '$rootScope', '$translate', '$http
                     }
                 }).then(function (response) {
                     if (response.data.records != undefined && response.data.records.length > 0) {
-                        $scope.prepareCostsReport(response.data.records);
+                        $scope.downloadCSV(response.data.records);
                     }
                 });
             }
         }
     };
 
-    $scope.preparePetrolsReport = function(records) {
-
+    $scope.downloadCSV = function(records) {
+        reportsFactory.downloadCSV(records);
     };
-
-    $scope.prepareCostsReport = function(records) {
-
-    };
-
 
     $scope.open = function() {
         $scope.state = {

@@ -107,7 +107,11 @@
                     {{petrol.total_cost}}
                 </td>
                 <td>
-                    {{petrol.fuel_type}}
+                    <ANY ng-switch="petrol.fuel_type">
+                        <ANY ng-switch-when="BENZINE">{{'COMMON_FUEL_BENZINE' | translate}}</ANY>
+                        <ANY ng-switch-when="DIESEL">{{'COMMON_FUEL_DIESEL' | translate}}</ANY>
+                        <ANY ng-switch-when="LPG">{{'COMMON_FUEL_LPG' | translate}}</ANY>
+                    </ANY>
                 </td>
                 <td class="text-right">
 

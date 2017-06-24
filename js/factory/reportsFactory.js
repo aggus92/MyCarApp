@@ -1,10 +1,10 @@
 /**
  * Created by aggus on 23.06.2017.
  */
-mycarapp.factory('reportsFactory', ['$scope', '$rootScope', function($scope, $rootScope) {
+mycarapp.factory('reportsFactory', ['$rootScope', function($rootScope) {
     var factory = {};
 
-    factory.convertArrayOfObjectsToCSV = function(args) {
+    function convertArrayOfObjectsToCSV(args) {
         var result, ctr, headers, columnDelimiter, lineDelimiter, data;
 
         data = args.data || null;
@@ -33,7 +33,7 @@ mycarapp.factory('reportsFactory', ['$scope', '$rootScope', function($scope, $ro
         });
 
         return result;
-    };
+    }
 
     factory.downloadCSV = function(records) {
         console.log(records);

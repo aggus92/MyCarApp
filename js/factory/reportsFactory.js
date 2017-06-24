@@ -1,7 +1,7 @@
 /**
  * Created by aggus on 23.06.2017.
  */
-vpabxdvgui.factory('reportsFactory', ['$sce','$state', '$filter', '$rootScope', '$modal', function($sce, $state, $filter, $rootScope, $modal) {
+mycarapp.factory('reportsFactory', ['$sce','$state', '$filter', '$rootScope', '$modal', function($sce, $state, $filter, $rootScope, $modal) {
     var factory = {};
 
     factory.convertArrayOfObjectsToCSV = function(args) {

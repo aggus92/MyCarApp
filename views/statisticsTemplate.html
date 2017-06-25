@@ -1,1 +1,40 @@
-statisticsTemplate
+<h3 class="header-h2"></h3>
+<div class="main-content__outline">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-sm-3" style="padding-left: 0;">
+                <label>{{'COMMON_COST_TYPE' | translate}}</label>
+                <ui-select ng-model="dates.objectType" ng-change="getStats()">
+                    <ui-select-match>
+                        {{$select.selected.type | translate}}
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in objectTypes">
+                        <span>{{item.type | translate}}</span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+            <div class="col-md-4">
+                <div class="radio radio-primary">
+                    <input type="radio" id="statisticsSms" value="day" ng-change="getStats()" ng-model="dates.dateType">
+                    <label for="statisticsSms">{{'COMMON_STATISTICS_DAILY' | translate}}</label>
+                </div>
+                <div class="radio radio-primary">
+                    <input type="radio" id="month" value="month" ng-change="getStats()" ng-model="dates.dateType">
+                    <label for="month">{{'COMMON_STATISTICS_MONTHLY' | translate}}</label>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label>{{'COMMON_ENDED_TO' | translate}}:</label>
+                <p class="input-group">
+                    <input type="text" ng-change="getStats()" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dates.startDate" is-open="state.open" max-date="maxDate" datepicker-options="dateOptions" ng-required="true" close-text="Close" show-button-bar="false"/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn button-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="container"></div>
+    </div>
+</div>

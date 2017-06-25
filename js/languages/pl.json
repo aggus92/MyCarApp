@@ -49,6 +49,9 @@
 	"COMMON_OUTDATED"								  : "Nieaktualne",
 	"COMMON_DAYS"									  : "dni",
 	"COMMON_ONE_DAY"								  : "dzień",
+	"COMMON_ENDED_TO"								  : "Kończąc na",
+	"COMMON_STATISTICS_DAILY"						  : "Dzienne",
+	"COMMON_STATISTICS_MONTHLY"						  : "Miesięczne",
 	"BUTTON_CHANGE"                                   : "Zmień",
 	"BUTTON_EDIT"                                     : "Edytuj",
 	"BUTTON_LOGIN"							     	  : "Zaloguj się",
@@ -84,5 +87,7 @@
 	"NOTIFICATION_SWITCH_CAR"						  : "Samochód zmieniony",
 	"NOTIFICATION_UPDATE"							  : "Zmiany zostały zapisane",
 	"ACCORDION_SHOW_REGISTRATION"					  : "Pokaż rejestrację",
-	"ACCORDION_SHOW_TECH_REVIEW"					  : "Pokaż przegląd techniczny"
+	"ACCORDION_SHOW_TECH_REVIEW"					  : "Pokaż przegląd techniczny",
+	"CHART_COSTS_STATISTICS"						  : "Statystyki kosztów",
+	"CHART_COSTS"									  : "Koszty"
 }

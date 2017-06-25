@@ -49,6 +49,9 @@
 	"COMMON_OUTDATED"								  : "Outdated",
 	"COMMON_DAYS"									  : "days",
 	"COMMON_ONE_DAY"								  : "day",
+	"COMMON_ENDED_TO"								  : "End on",
+	"COMMON_STATISTICS_DAILY"						  : "Daily",
+	"COMMON_STATISTICS_MONTHLY"						  : "Monthly",
 	"BUTTON_CHANGE"                                   : "Change",
 	"BUTTON_EDIT"                                     : "Edit",
 	"BUTTON_LOGIN"								      : "Sign in",
@@ -84,5 +87,7 @@
 	"NOTIFICATION_SWITCH_CAR"						  : "Car switched successfully",
 	"NOTIFICATION_UPDATE"							  : "Changes have been saved",
 	"ACCORDION_SHOW_REGISTRATION"					  : "Show registration",
-	"ACCORDION_SHOW_TECH_REVIEW"					  : "Show tech review"
+	"ACCORDION_SHOW_TECH_REVIEW"					  : "Show tech review",
+	"CHART_COSTS_STATISTICS"						  : "Costs statistics",
+	"CHART_COSTS"									  : "Costs"
 }

@@ -98,6 +98,8 @@ mycarapp.controller('StatisticsCtrl', ['$scope', '$rootScope', '$translate', '$f
             costs.push([$scope.statData[i].date, $scope.statData[i].total_cost]);
         }
 
+        console.log(costs);
+
         stockChart.addSeries({
             data: costs,
             name: $filter('translate')($scope.dates.objectType.type) + ' - ' + $filter('translate')('CHART_COSTS'),
@@ -149,10 +151,6 @@ mycarapp.controller('StatisticsCtrl', ['$scope', '$rootScope', '$translate', '$f
         title: {
             text: $filter('translate')($scope.dates.objectType.type) + ' - ' + $filter('translate')('CHART_COSTS_STATISTICS')
         },
-
-        navigator: {
-            adaptToUpdatedData: true
-        },
         yAxis: {
             title: {
                 text: $filter('translate')('CHART_COSTS_STATISTICS')
@@ -171,51 +169,7 @@ mycarapp.controller('StatisticsCtrl', ['$scope', '$rootScope', '$translate', '$f
             dateTimeLabelFormats: {
                 day: '%d %b %Y'    //ex- 01 Jan 2016
             }
-        },
-
-        rangeSelector: {
-            buttons: [{
-                type: 'day',
-                count: 1,
-                text: '1D'
-            }, {
-                type: 'day',
-                count: 7,
-                text: '7D'
-            }, {
-                type: 'all',
-                count: 1,
-                text: 'All'
-            }],
-            selected: 1,
-            inputEnabled: false
-        },
-        plotOptions: {
-            series: {
-                events: {
-                    legendItemClick: function(event) {
-                        $scope.$digest();
-                        $scope.getStats();
-                        return true;
-                    }
-                }
-            }
-        },
-
-        series: {
-            cursor: 'pointer',
-            point: {
-                events: {
-                    click: function () {
-                        var tmpDate = this.category.split('.');
-                        $scope.dates.startDate = new Date(tmpDate[2] +"-"+ str_pad(tmpDate[1]) +'-'+ str_pad(tmpDate[0]));
-                        $scope.$digest();
-                        $scope.getStats();
-                    }
-                }
-            }
         }
-
     });
 
 }]);

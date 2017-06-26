@@ -31,5 +31,19 @@ mycarapp.controller('CarListCtrl', ['$scope', '$rootScope', '$translate', '$stat
 	$scope.addNewCar = function() {
 		var isFirstCar = $scope.userCars.length === 0;
 		$state.go('car-list.add', {'isFirstCar': isFirstCar});
-	}
+	};
+
+	$scope.removeCar = function(car) {
+	    if (car.is_default = 0 && $rootScope.currentCar.id != car.id) {
+            $http.get('ajax/removeCar.php', {
+                params: {
+                    carId: car.id
+                }
+            }).then(function (response) {
+                $scope.getCarList();
+            });
+        } else {
+            growl.addErrorMessage("NOTIFICATION_CANNOT_REMOVE_CAR");
+        }
+    }
 }]);

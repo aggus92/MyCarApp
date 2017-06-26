@@ -86,6 +86,7 @@
 	"NOTIFICATION_ADD_NEW_CAR"						  : "Added new car",
 	"NOTIFICATION_SWITCH_CAR"						  : "Car switched successfully",
 	"NOTIFICATION_UPDATE"							  : "Changes have been saved",
+	"NOTIFICATION_CANNOT_REMOVE_CAR"				  : "Cannot remove car",
 	"ACCORDION_SHOW_REGISTRATION"					  : "Show registration",
 	"ACCORDION_SHOW_TECH_REVIEW"					  : "Show tech review",
 	"CHART_COSTS_STATISTICS"						  : "Costs statistics",

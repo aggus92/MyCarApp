@@ -86,6 +86,7 @@
 	"NOTIFICATION_ADD_NEW_CAR"						  : "Dodano nowy samochód",
 	"NOTIFICATION_SWITCH_CAR"						  : "Samochód zmieniony",
 	"NOTIFICATION_UPDATE"							  : "Zmiany zostały zapisane",
+	"NOTIFICATION_CANNOT_REMOVE_CAR"				  : "Nie można usunąć samochodu",
 	"ACCORDION_SHOW_REGISTRATION"					  : "Pokaż rejestrację",
 	"ACCORDION_SHOW_TECH_REVIEW"					  : "Pokaż przegląd techniczny",
 	"CHART_COSTS_STATISTICS"						  : "Statystyki kosztów",

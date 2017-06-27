@@ -34,7 +34,8 @@ mycarapp.controller('CarListCtrl', ['$scope', '$rootScope', '$translate', '$stat
 	};
 
 	$scope.removeCar = function(car) {
-	    if (car.is_default = 0 && $rootScope.currentCar.id != car.id) {
+		console.log(car);
+	    if (car.is_default == 0 && $rootScope.currentCar.id != car.id) {
             $http.get('ajax/removeCar.php', {
                 params: {
                     carId: car.id

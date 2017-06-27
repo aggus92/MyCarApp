@@ -95,7 +95,8 @@ mycarapp.controller('StatisticsCtrl', ['$scope', '$rootScope', '$translate', '$f
         var costs = [];
 
         for (var i in $scope.statData) {
-            costs.push([$scope.statData[i].date, $scope.statData[i].total_cost]);
+			var date = new Date($scope.statData[i].date);
+            costs.push([date.getTime(), $scope.statData[i].total_cost]);
         }
 
         console.log(costs);

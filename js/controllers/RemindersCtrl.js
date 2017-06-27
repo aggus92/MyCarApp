@@ -21,6 +21,8 @@ mycarapp.controller('RemindersCtrl', ['$scope', '$rootScope', '$stateParams', '$
                     var daysToEnd = 365 - (Math.round((currentDate.getTime() - date.getTime()) / (1000 * 60 * 60 * 24)));
 					var endDate = new Date();
                     endDate.setYear(date.getFullYear() + 1);
+					endDate.setMonth(date.getMonth());
+					endDate.setDate(date.getDate());
                     $scope.remindersList.push({
                         type: 'COMMON_COST_TECH_REVIEW',
                         date: response.data.records[0].date,
@@ -47,6 +49,8 @@ mycarapp.controller('RemindersCtrl', ['$scope', '$rootScope', '$stateParams', '$
                     var daysToEnd = 365 - (Math.round((currentDate.getTime() - date.getTime()) / (1000 * 60 * 60 * 24)));
 					var endDate = new Date();
                     endDate.setYear(date.getFullYear() + 1);
+					endDate.setMonth(date.getMonth());
+					endDate.setDate(date.getDate());
                     $scope.remindersList.push({
                         type: 'COMMON_COST_INSURANCE',
                         date: response.data.records[0].date,
